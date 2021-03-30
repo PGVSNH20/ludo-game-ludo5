@@ -9,15 +9,21 @@ namespace Renderer
         static void Main(string[] args)
         {
             Random dice = new Random();
-
+            int highestVal = 0;
 
             for (int i = 0; i < 100; i++)
             {
-                int gen = dice.Next(5) + 1;
+                int gen = dice.Next(6);
+                if(gen > highestVal)
+                {
+                    highestVal = gen;
+                }
+
 
                 Console.WriteLine("Roll:" + gen);
             }
 
+            Console.WriteLine("Highest Value: " +highestVal);
             
             
 

@@ -15,7 +15,7 @@ namespace Renderer
 
             for (int i = 0; i < 100; i++)
             {
-                int gen = dice.Next(6)+1;
+                int gen = dice.Next(1, 7);
                 if(gen > highestVal)
                 {
                     highestVal = gen;

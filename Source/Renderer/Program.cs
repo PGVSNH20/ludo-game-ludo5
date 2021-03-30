@@ -8,7 +8,20 @@ namespace Renderer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Random dice = new Random();
+
+
+            for (int i = 0; i < 100; i++)
+            {
+                int gen = dice.Next(5) + 1;
+
+                Console.WriteLine("Roll:" + gen);
+            }
+
+            
+            
+
+
         }
     }
 }

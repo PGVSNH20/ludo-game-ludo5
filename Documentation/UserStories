@@ -1,3 +1,6 @@
 When I roll the dice
 I want a number between 1 and 6
 so I can move my thing-a-ma-bob
+If my thing-a-ma-bob stands on my color, it's a safezone, no player can send me to my nest.
+If my thing-a-ma-bob crash into another player's piece, if not standing on a safezone, send it back to it's nest. 
+If my thing-a-ma-bob enter goal, I get 1 point and remove my thing-a-ma-bob.

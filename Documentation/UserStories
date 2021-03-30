@@ -1,6 +1,9 @@
 When I roll the dice
 I want a number between 1 and 6
 so I can move my thing-a-ma-bob
+
 My thing-a-ma-bob stands on my coloured square, when another player crash into my thing-a-ma-bob, nothing happens
 My thing-a-ma-bob stands on blank square, when another player crash into my thing-a-ma-bob, my thing-a-ma-bob sends to my nest
-My thing-a-ma-bob enter goal, I get 1 point, remove my thing-a-ma-bob.
+My thing-a-ma-bob enter goal, I get 1 point, remove my thing-a-ma-bob from the game.
+My thing-a-ma-bob go around the board, open the finishline gate, so I can win the game.
+If I roll my dice, it show 6, I can throw again.

@@ -10,22 +10,29 @@ namespace Renderer
         {
             Random dice = new Random();
             int highestVal = 0;
+            int lowestVal = 6;
+
 
             for (int i = 0; i < 100; i++)
             {
-                int gen = dice.Next(6);
+                int gen = dice.Next(6)+1;
                 if(gen > highestVal)
                 {
                     highestVal = gen;
                 }
 
+                if(gen < lowestVal)
+                {
+                    lowestVal = gen;
+                }
 
-                Console.WriteLine("Roll:" + gen);
+
+                Console.WriteLine($"Roll {i}:" + gen);
             }
 
             Console.WriteLine("Highest Value: " +highestVal);
-            
-            
+            Console.WriteLine("Lowest Value: " + lowestVal);
+
 
 
         }

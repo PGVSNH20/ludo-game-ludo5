@@ -8,75 +8,55 @@ namespace GameEngine.Classes
 {
     class Board
     {
+        
+        //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
 
+        int[] StartPositions = { 1, 2, 3, 4 };
 
+        public List<Square> MainBoard{ get; set; }
 
-        public List<Square> MainSpace { get; set; }
+        public List<List<Square>> HomeStretches { get; set; }
 
-        //En Lista av listor? lägg till färg dynamiskt?
-
-        public List<List<Square>> Colors { get; set; }
-
-        public List<Square> Red { get; set; }
-        public List<Square> Blue { get; set; }
-        public List<Square> Yellow { get; set; }
-        public List<Square> Green { get; set; }
-
-
-        //Standard Board.
-        public Board()
-        {
-            int i = 0;  
-            for (; i < 48; i++)
-            {
-                MainSpace.Add(new Square(i,0));
-            }
-
-            for (int z = 0; z < 5; z++)
-            {
-                Red.Add(new Square(i++,0));
-                Blue.Add(new Square(i++, 0));
-                Yellow.Add(new Square(i++, 0));
-                Green.Add(new Square(i++, 0));
-            }
-        }
-
+        public List<Square> Nests {get; set;}
 
         //Dymaic generation.
+
         public Board(int players, int spaces)
         {
-
-            for (int p = 0; p < players; p++)
-            {
-                Colors.Add(new List<Square>());
-            }
-
+            
             int i = 0;
             for (; i < spaces; i++)
             {
-                MainSpace.Add(new Square(i,0));
+                MainBoard.Add(new Square(i));
             }
 
-            foreach (var colorList in Colors)
+            CreateHomeStretches(players);
+        }
+
+
+        public void CreateHomeStretches(int players)
+        {
+
+            //set up homestreches
+            for (int p = 0; p < 4; p++)
+            {
+                HomeStretches.Add(new List<Square>());
+            }
+
+            foreach (var colorList in HomeStretches)
             {
                 for (int z = 0; z < 5; z++)
                 {
-                    colorList.Add(new Square(i++));
+                    colorList.Add(new Square(z));
                 }
             }
 
 
 
-
+            
         }
 
-
-        private Square makeNewSquare(int id)
-        {
-            ///if that number then safe, to be implemented.
-            ///
-            return new Square(id, 0);
-        }
+        
 
 
 

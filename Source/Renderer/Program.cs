@@ -15,8 +15,6 @@ namespace Renderer
              * Step 4: When the game is over, dispose of the engine and ask the user if they want to play another game.
              */
 
-
-
         }
     }
 }

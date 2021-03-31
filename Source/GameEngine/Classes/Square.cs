@@ -8,12 +8,10 @@ namespace GameEngine.Classes
 {
     class Square
     {
-        int Id;
-        List<Piece> Pieces;
-        int Safe;
+        public int Id { get; }
+        public List<Piece> Pieces { get; set; }
+        public int Safe { get; }
         //safe  for player #x
-
-
 
         public Square(int id)
         {
@@ -21,16 +19,10 @@ namespace GameEngine.Classes
             Safe = -1;
         }
 
-
         public Square(int id, int safe)
         {
             Id = id;
             Safe = safe;
         }
-
-
-
-
-
     }
 }

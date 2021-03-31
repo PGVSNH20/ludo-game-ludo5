@@ -9,20 +9,20 @@ namespace GameEngine.Classes
     class Board
     {
 
-        
 
-        public List<Square> MainSpace;
+
+        public List<Square> MainSpace { get; set; }
 
         //En Lista av listor? lägg till färg dynamiskt?
 
-        List<List<Square>> colors;
-        
-        public List<Square> Red;
-        public List<Square> Blue;
-        public List<Square> Yellow;
-        public List<Square> Green;
+        public List<List<Square>> Colors { get; set; }
 
-        
+        public List<Square> Red { get; set; }
+        public List<Square> Blue { get; set; }
+        public List<Square> Yellow { get; set; }
+        public List<Square> Green { get; set; }
+
+
         //Standard Board.
         public Board()
         {
@@ -48,7 +48,7 @@ namespace GameEngine.Classes
 
             for (int p = 0; p < players; p++)
             {
-                colors.Add(new List<Square>());
+                Colors.Add(new List<Square>());
             }
 
             int i = 0;
@@ -57,7 +57,7 @@ namespace GameEngine.Classes
                 MainSpace.Add(new Square(i,0));
             }
 
-            foreach (var colorList in colors)
+            foreach (var colorList in Colors)
             {
                 for (int z = 0; z < 5; z++)
                 {

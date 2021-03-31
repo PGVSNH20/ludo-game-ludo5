@@ -20,3 +20,8 @@ Square, rutorna
 GameSetting. huvudmeny, där man väljer hur många som ska spelas
 
 En Enum har skapats för färgerna och en konstant klass för spelare.
+
+13:00 - 13:40
+Yan, Sanna, Robert och Martin spelade en omgång Fia med Knuff online.
+Martins dator frös under den otroliga stressen och behövde startas om.
+Vem vann? Vem vet...

@@ -8,3 +8,4 @@ Vi har gjort en del planering kring vad vi vill ha i vårat Fia-med-Knuff 100-Pe
 
 2021-03-31, 09:30:
 Martin har ändrat user stories filen, mest lagt till fler.
+La också in lite kommentarer i Engine.cs som en grundläggande plan för programmets struktur.

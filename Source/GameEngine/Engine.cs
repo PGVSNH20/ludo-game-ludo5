@@ -9,22 +9,23 @@ namespace GameEngine
 	/* Classes in this namespace are meant to modify the game's state based on inputs, doing things such as rolling dice and moving figures around the board.
      * 
     Piece
-		Id	int
+		Id		int
 	Player
-		Id	int
-		AI	bool
+		Id		int
+		AI		bool
 		Pieces	List<Piece>
 		Score	int
 	Square
-		Id	int
+		Id		int
 		Pieces	List<Piece>
 		Safe	int
 	Board
 		Squares List<Square>
 		Blue	List<Square>
 		Yellow	List<Square>
-		Red	List<Square>
+		Red		List<Square>
 		Green	List<Square>
+		Start	Square
 
 	A Piece is a single unit for its owner to control.
 	A Player is either a living being playing the game or an AI.
@@ -37,6 +38,7 @@ namespace GameEngine
 		The Safe int determines which player's safe zone it is. 1 for blue, 2 for yellow, 3 for red, 4 for green.
 			If it's not a safe zone it's 0.
 	A Board has a number of Square objects in the Squares list that represent all the squares going around the board.
+		All inactive Pieces are on the Square Board.Start
 	A Board also has a list of Squares for each color representing the final stretch for that particular player.
 		The player's Id determines their color - 1 for blue, 2 for yellow, 3 for red and 4 for green.
 	If the Board's Squares list has 40 Square objects (standard according to old rules)
@@ -47,9 +49,27 @@ namespace GameEngine
 			If the number of squares changes, it has to change by a factor of four
 				44, 48, 52 are all acceptable numbers.
 				43, 49, 51 are not acceptable numbers.
+	When a player that is not player 1 rolls a value that would make them move past square 39
+		the game should check how many spaces past 39 they would go and loop them around to the start.
      * 
      */
 	class Engine
     {
+		/*
+			Step 1: Get information about how to set up
+				How many players?
+				How many of those are AI-controlled?
+				What size board are you playing on (if variable size is capable)
+				Load from a previously saved state?
+			Step 2: Set up the board
+				Generate the squares
+				Generate the players
+				Place the players' Pieces on the Start square
+			Step 3: Start up the game loop
+				Play the game!
+				Save game if need be?
+			Step 4: Game completed.
+				Save replay? And other Database stuff.
+		 */
     }
 }

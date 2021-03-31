@@ -8,10 +8,8 @@ namespace GameEngine.Classes
 {
     class Board
     {
-        
-        //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
 
-        int[] StartPositions = { 1, 2, 3, 4 };
+        //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
 
         public List<Square> MainBoard{ get; set; }
 
@@ -19,24 +17,30 @@ namespace GameEngine.Classes
 
         public List<Square> Nests {get; set;}
 
+        public List<int> StartingPositions;
+
+        
+        
         //Dymaic generation.
 
         public Board(int players, int spaces)
         {
-            
-            int i = 0;
-            for (; i < spaces; i++)
+            for (int i = 0; i < spaces; i++)
             {
                 MainBoard.Add(new Square(i));
             }
 
             CreateHomeStretches(players);
+            StartingPositions = generateStartPosistions(players,spaces);
+
+
+
+
         }
 
 
         public void CreateHomeStretches(int players)
         {
-
             //set up homestreches
             for (int p = 0; p < 4; p++)
             {
@@ -51,9 +55,21 @@ namespace GameEngine.Classes
                 }
             }
 
+        }
 
+        private List<int> generateStartPosistions(int players, int Boardsize)
+        {
+            List<int> startPositions = new List<int>();
 
-            
+            int x = Boardsize / players;
+
+            for (int i = 0; i < Boardsize; i += (Boardsize / 40))
+            {
+                startPositions.Add(i);
+            }
+
+            return startPositions;
+
         }
 
         

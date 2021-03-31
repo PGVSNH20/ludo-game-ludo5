@@ -8,5 +8,15 @@ namespace GameEngine.Classes
 {
     class Square
     {
+        int id;
+        //List<Piece>
+        int safe;
+
+
+
+
+
+
+
     }
 }

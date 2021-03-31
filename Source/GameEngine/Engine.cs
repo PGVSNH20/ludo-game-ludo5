@@ -1,5 +1,6 @@
 ﻿using GameEngine.Classes;
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,8 +55,14 @@ namespace GameEngine
 		the game should check how many spaces past 39 they would go and loop them around to the start.
      * 
      */
-	class Engine : IDisposable
+	public class Engine
     {
+
+		public Engine()
+        {
+
+        }
+
 		public void Setup(GameSettings settings)
         {
 			throw new NotImplementedException();
@@ -72,10 +79,6 @@ namespace GameEngine
 			throw new NotImplementedException();
 		}
 
-        public void Dispose()
-        {
-			GC.SuppressFinalize(this);
-        }
 
         /*
 			Step 1: Get information about how to set up

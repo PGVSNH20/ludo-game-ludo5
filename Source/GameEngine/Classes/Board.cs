@@ -12,14 +12,11 @@ namespace GameEngine.Classes
         //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
 
         int[] StartPositions = { 1, 2, 3, 4 };
-
         public List<Square> MainBoard{ get; set; }
-
         public List<List<Square>> HomeStretches { get; set; }
-
         public List<Square> Nests {get; set;}
 
-        //Dymaic generation.
+        //Dynamic generation.
 
         public Board(int players, int spaces)
         {
@@ -50,15 +47,6 @@ namespace GameEngine.Classes
                     colorList.Add(new Square(z));
                 }
             }
-
-
-
-            
         }
-
-        
-
-
-
     }
 }

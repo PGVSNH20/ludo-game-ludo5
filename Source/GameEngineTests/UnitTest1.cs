@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using GameEngine;
 
 namespace GameEngineTests
 {
@@ -10,9 +11,18 @@ namespace GameEngineTests
         }
 
         [Test]
-        public void Test1()
+        public void Dice_Should_Be_SixSided()           // Warning! This test may, extremely rarely, give a false positive even if the dice function is broken.
         {
-            Assert.Pass();
+            bool NoRollOverSixOrBelowOne = true;
+            for(int i = 0; i < 1000; i++)
+            {
+                int roll = Dice.Roll();
+                if (!(roll >= 1 && roll <= 6))
+                {
+                    NoRollOverSixOrBelowOne = false;
+                }
+            }
+            Assert.True(NoRollOverSixOrBelowOne);
         }
     }
 }

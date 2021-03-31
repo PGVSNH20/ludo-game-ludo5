@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class GameSettings
+    public class GameSettings
     {
         public int Players { get; set; }
         public int BoardSize { get; set; }

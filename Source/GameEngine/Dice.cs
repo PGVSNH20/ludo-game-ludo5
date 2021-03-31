@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine
 {
-    static class Dice
+    public static class Dice
     {
         public static int Roll()
         {

@@ -11,10 +11,9 @@ namespace GameEngine.Classes
 
         //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
 
+
         public List<Square> MainBoard{ get; set; }
-
         public List<List<Square>> HomeStretches { get; set; }
-
         public List<Square> Nests {get; set;}
 
         public List<int> StartingPositions;
@@ -71,10 +70,5 @@ namespace GameEngine.Classes
             return startPositions;
 
         }
-
-        
-
-
-
     }
 }

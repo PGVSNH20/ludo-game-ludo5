@@ -6,6 +6,9 @@ namespace Renderer
 {
     /* Classes in this namespace are used to render the game on screen based on the current game state.
      */
+
+    //While rolling the dice it should 'shuffel' some random numbers for a short while before it shows the real number.
+
     class Program
     {
         static void Main(string[] args)
@@ -16,6 +19,7 @@ namespace Renderer
              * Step 3: Get data from the game engine to render onto the screen.
              * Step 4: When the game is over, dispose of the engine and ask the user if they want to play another game.
              */
+
             Engine newEngine = new Engine();
             Thread.Sleep(10000);
         }

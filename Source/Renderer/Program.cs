@@ -1,4 +1,5 @@
 ﻿using System;
+using GameEngine;
 
 namespace Renderer
 {
@@ -14,7 +15,7 @@ namespace Renderer
              * Step 3: Get data from the game engine to render onto the screen.
              * Step 4: When the game is over, dispose of the engine and ask the user if they want to play another game.
              */
-
+            Console.WriteLine("Hello, warld");
         }
     }
 }

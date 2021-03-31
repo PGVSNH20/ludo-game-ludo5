@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class GameSetting
+    class GameSettings
     {
+        public int Players { get; set; }
+        public int BoardSize { get; set; }
         //choose how many players and they write in their names
+        public GameSettings(int players, int boardSize)
+        {
+            Players = players;
+            BoardSize = boardSize;
+        }
     }
 }

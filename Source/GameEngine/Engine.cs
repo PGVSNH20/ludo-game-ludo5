@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEngine.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,9 +54,30 @@ namespace GameEngine
 		the game should check how many spaces past 39 they would go and loop them around to the start.
      * 
      */
-	class Engine
+	class Engine : IDisposable
     {
-		/*
+		public void Setup(GameSettings settings)
+        {
+			throw new NotImplementedException();
+        }
+
+		public void Save()
+		{
+			// Takes the current gamestate and saves it to the database
+			throw new NotImplementedException();
+		}
+		public void Load()
+		{
+			// Takesa gamestate from the database and sets it up to allow play to continue
+			throw new NotImplementedException();
+		}
+
+        public void Dispose()
+        {
+			GC.SuppressFinalize(this);
+        }
+
+        /*
 			Step 1: Get information about how to set up
 				How many players?
 				How many of those are AI-controlled?
@@ -70,6 +92,6 @@ namespace GameEngine
 				Save game if need be?
 			Step 4: Game completed.
 				Save replay? And other Database stuff.
-		 */
+		*/
     }
 }

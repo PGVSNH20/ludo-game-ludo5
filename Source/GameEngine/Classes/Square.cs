@@ -11,7 +11,7 @@ namespace GameEngine.Classes
         public int Id { get; }
         public List<Piece> Pieces { get; set; }
         public int Safe { get; }
-        //safe  for player #x
+        //safe for player #x
 
         public Square(int id)
         {

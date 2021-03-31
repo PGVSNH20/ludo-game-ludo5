@@ -12,5 +12,10 @@ namespace GameEngine
         {
             return new Random().Next(1, 7);
         }
+
+        public static int Roll(int size)
+        {
+            return new Random().Next(1, size-1);
+        }
     }
 }

@@ -13,13 +13,9 @@ namespace GameEngine.Classes
 
         public List<Square> MainSpace;
 
-
-
-
-
         //En Lista av listor? lägg till färg dynamiskt?
 
-        //List<List<Square>> colors;
+        List<List<Square>> colors;
         
         public List<Square> Red;
         public List<Square> Blue;
@@ -30,29 +26,56 @@ namespace GameEngine.Classes
         //Standard Board.
         public Board()
         {
-            for (int i = 0; i < 48; i++)
+            int i = 0;  
+            for (; i < 48; i++)
             {
-                MainSpace.Add(new Square());
+                MainSpace.Add(new Square(i,0));
             }
 
-            for (int i = 0; i < 5; i++)
+            for (int z = 0; z < 5; z++)
             {
-                Red.Add(new Square());
-                Blue.Add(new Square());
-                Yellow.Add(new Square());
-                Green.Add(new Square());
+                Red.Add(new Square(i++,0));
+                Blue.Add(new Square(i++, 0));
+                Yellow.Add(new Square(i++, 0));
+                Green.Add(new Square(i++, 0));
             }
         }
 
 
-        //Make Big board,5+ players
+        //Dymaic generation.
         public Board(int players, int spaces)
         {
-            
+
+            for (int p = 0; p < players; p++)
+            {
+                colors.Add(new List<Square>());
+            }
+
+            int i = 0;
+            for (; i < spaces; i++)
+            {
+                MainSpace.Add(new Square(i,0));
+            }
+
+            foreach (var colorList in colors)
+            {
+                for (int z = 0; z < 5; z++)
+                {
+                    colorList.Add(new Square(i++));
+                }
+            }
 
 
 
 
+        }
+
+
+        private Square makeNewSquare(int id)
+        {
+            ///if that number then safe, to be implemented.
+            ///
+            return new Square(id, 0);
         }
 
 

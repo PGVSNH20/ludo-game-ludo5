@@ -1,3 +1,10 @@
 2021-03-30:
 Martin, Robert och Sanna har tagit kontakt med varandra och diskuterat projektet i stort.
 Gruppen har provspelat fia-med-knuff online för att vänja sig med reglerna.
+
+Under diskussion efter fiaspelandet var över så kom Yan in i samtalet.
+Vi har gjort en del planering kring vad vi vill ha i vårat Fia-med-Knuff 100-Person BattleRoyale Auto-Chess
+
+
+2021-03-31, 09:30:
+Martin har ändrat user stories filen, mest lagt till fler.

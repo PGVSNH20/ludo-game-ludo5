@@ -2,8 +2,56 @@ When I roll the dice
 I want a number between 1 and 6
 so I can move my thing-a-ma-bob
 
-My thing-a-ma-bob stands on my coloured square, when another player crash into my thing-a-ma-bob, nothing happens
-My thing-a-ma-bob stands on blank square, when another player crash into my thing-a-ma-bob, my thing-a-ma-bob sends to my nest
-My thing-a-ma-bob enter goal, I get 1 point, remove my thing-a-ma-bob from the game.
-My thing-a-ma-bob go around the board, open the finishline gate, so I can win the game.
-If I roll my dice, it show 6, I can throw again.
+
+When my thing-a-ma-bob stands on my coloured square (a safe zone)
+And another player crashes their thing-a-ma-bob into my thing-a-ma-bob
+They are allowed to share the space
+
+
+When my thing-a-ma-bob stands on blank square
+Given that another player crashes into my thing-a-ma-bob with theirs
+My thing-a-ma-bob gets sent back to my nest
+
+
+When my thing-a-ma-bob enters the goal
+I get 1 point and my thing-a-ma-bob is removed from the game.
+
+
+When my thing-a-ma-bob has gone all the way around the board
+It should go to the final stretch rather than continue around the edge
+So that it can enter the goal
+
+
+Given that it's my turn and I roll the dice
+If it shows a 6
+I can both make a move and then take another turn.
+
+
+Given that I have thing-a-ma-bobs left in my nest
+And I roll a 6
+I can either move a thing-a-ma-bob on the board or take one out of the nest.
+
+
+Given that I have several active thing-a-ma-bobs on the board
+And I roll the dice
+I get to choose which thing-a-ma-bob should move
+
+Given that I have one or more thing-a-ma-bobs on the final stretch before the goal
+If I roll a number on the dice that's higher than the number of steps remaining
+That thing-a-ma-bob is not allowed to move even if it's the only one left.
+
+Given any active game state
+If I press the "save game" button
+The game's current state should be saved to the database.
+
+Given that there are saved games in the database
+I should be able to select a specific game
+And load it's saved state so I can continue playing an earlier game.
+
+Given that I have completed a game
+There should be a button called "save replay"
+Which stores a replay in the database
+
+Given that there are saved replays in the database
+If I pick one of them
+I should be able to watch a replay, move-by-move, of an earlier game.

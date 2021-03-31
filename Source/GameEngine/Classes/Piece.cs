@@ -1,9 +1,6 @@
 ﻿using GameEngine.Enumerations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GameEngine.Classes
 {
@@ -15,6 +12,5 @@ namespace GameEngine.Classes
         public int PiecePosition { get; set; }
         public bool PieceFinished { get; set; }
         public bool PieceInFinishLine { get; set; }
-
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class Class1
+    class Player
     {
     }
 }

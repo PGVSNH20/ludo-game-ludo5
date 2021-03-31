@@ -9,21 +9,21 @@ namespace GameEngine
 	/* Classes in this namespace are meant to modify the game's state based on inputs, doing things such as rolling dice and moving figures around the board.
      * 
     Piece
-		Id	int
+		Id		int
 	Player
-		Id	int
-		AI	bool
+		Id		int
+		AI		bool
 		Pieces	List<Piece>
 		Score	int
 	Square
-		Id	int
+		Id		int
 		Pieces	List<Piece>
 		Safe	int
 	Board
 		Squares List<Square>
 		Blue	List<Square>
 		Yellow	List<Square>
-		Red	List<Square>
+		Red		List<Square>
 		Green	List<Square>
 
 	A Piece is a single unit for its owner to control.
@@ -47,6 +47,8 @@ namespace GameEngine
 			If the number of squares changes, it has to change by a factor of four
 				44, 48, 52 are all acceptable numbers.
 				43, 49, 51 are not acceptable numbers.
+	When a player that is not player 1 rolls a value that would make them move past square 39
+		the game should check how many spaces past 39 they would go and loop them around to the start.
      * 
      */
 	class Engine

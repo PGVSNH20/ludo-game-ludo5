@@ -9,3 +9,14 @@ Vi har gjort en del planering kring vad vi vill ha i vårat Fia-med-Knuff 100-Pe
 2021-03-31, 09:30:
 Martin har ändrat user stories filen, mest lagt till fler.
 La också in lite kommentarer i Engine.cs som en grundläggande plan för programmets struktur.
+
+10:00-11:30:
+Martin, Robert, Sanna och Yan har påbörjat med att upp en grundläggande stuktur utifrån kommentarerna i Egine.cs genom att skapa klasser så som: 
+Board, spelbanan
+Nest, boet där alla spelare startas
+Piece, spelgubbarnas egenskaper
+Player, spelarens egenskaper
+Square, rutorna
+GameSetting. huvudmeny, där man väljer hur många som ska spelas
+
+En Enum har skapats för färgerna och en konstant klass för spelare.

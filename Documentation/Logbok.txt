@@ -28,3 +28,10 @@ Vem vann? Vem vet...
 
 14:00
 Isak kom in i gruppmötet vid 14:30.
+
+Uppdatering 17:30, 2021-03-31
+Hela gruppen arbetade det mesta av dagen fr.o.m. 10:00 till 16:30, med några pauser här och där för bl.a. lunch.
+Vi har satt upp klasser för datamodellen som spelmotorn kommer arbeta ifrån, pjäser, spelare, spelbräde osv.
+Dessutom finnns några ej-implementerade metoder i Engine, behövs nog mer fortfarande, och de kommer användas för att skriva tester så vi kan göra dem innan vi faktiskt fyller metoderna med kod.
+Vårt första test är skrivet, en metod som i de flesta fall kommer se ifall vår tärningsmetod Dice.Roll() fungerar korrekt. Det kan finnas sällsynta fall då den ger grönt ljus även när metoden inte egentligen borde ge grönt, men så länge som man inte försökt lägga in något för att lura den så borde det fungera ganska bra.
+Kommentarer i Engine- och Program-klasserna beskriver det planerade flödet för programmet så att vi kan börja lägga in metoder som gör att programmet faktiskt följer den planen vi har.

@@ -8,30 +8,12 @@ namespace Renderer
     {
         static void Main(string[] args)
         {
-            Random dice = new Random();
-            int highestVal = 0;
-            int lowestVal = 6;
-
-
-            for (int i = 0; i < 100; i++)
-            {
-                int gen = dice.Next(1, 7);
-                if(gen > highestVal)
-                {
-                    highestVal = gen;
-                }
-
-                if(gen < lowestVal)
-                {
-                    lowestVal = gen;
-                }
-
-
-                Console.WriteLine($"Roll {i}:" + gen);
-            }
-
-            Console.WriteLine("Highest Value: " +highestVal);
-            Console.WriteLine("Lowest Value: " + lowestVal);
+            /*
+             * Step 1: Get user input for the game engine to use.
+             * Step 2: Start up the game engine, sending in an object/array with arguments for the engine to use.
+             * Step 3: Get data from the game engine to render onto the screen.
+             * Step 4: When the game is over, dispose of the engine and ask the user if they want to play another game.
+             */
 
 
 

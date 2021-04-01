@@ -57,28 +57,46 @@ namespace GameEngine
      */
 	public class Engine
     {
+		GameSettings Settings;
 
-		public Engine()
+		public Engine(GameSettings settings)
         {
-
-        }
-
-		public void Setup(GameSettings settings)
-        {
-			throw new NotImplementedException();
-        }
+			Settings = settings;
+		}
 
 		public void Save()
 		{
 			// Takes the current gamestate and saves it to the database
 			throw new NotImplementedException();
 		}
-		public void Load()
+		public Engine Load()
 		{
-			// Takesa gamestate from the database and sets it up to allow play to continue
+			// Takes a gamestate from the database and sets it up to allow play to continue
 			throw new NotImplementedException();
 		}
 
+		private void StartGame()
+        {
+			throw new NotImplementedException();
+		}
+
+		private void TakeTurn()
+        {
+			/* A single turn should look something like this:
+			 * The ActivePlayer is allowed to roll the dice.
+			 * The system checks to see if there is at least one legal move, and if there is, it finds all pieces the ActivePlayer controls that can use the roll.
+			 * The ActivePlayer gets to, if possible, choose which Piece is going to use the roll to move.
+			 * Then an evaluation is made to see if the ActivePlayer gets to go again (knocked out an opponent's piece, rolled a 6 etc)
+			 * If ActivePlayer gets to make another turn, call TakeTurn()
+			 * Else increment the ActivePlayer value (if the value is larger than the number of players, overflow back to lowest numbered player) and then call TakeTurn()
+			 * This means we only need one Move() method which checks the gamestate to see which player is currently active, and then moves the correct player's piece.
+			 * We will, however, need to make sure that
+			 *		The ActivePlayer can only select their own pieces
+			 *		The ActivePlayer can only select pieces that have legal moves to make
+			 *		If no legal moves are available, the turn is passed to the next player
+			 */
+			throw new NotImplementedException();
+        }
 
         /*
 			Step 1: Get information about how to set up

@@ -35,3 +35,16 @@ Vi har satt upp klasser för datamodellen som spelmotorn kommer arbeta ifrån, p
 Dessutom finnns några ej-implementerade metoder i Engine, behövs nog mer fortfarande, och de kommer användas för att skriva tester så vi kan göra dem innan vi faktiskt fyller metoderna med kod.
 Vårt första test är skrivet, en metod som i de flesta fall kommer se ifall vår tärningsmetod Dice.Roll() fungerar korrekt. Det kan finnas sällsynta fall då den ger grönt ljus även när metoden inte egentligen borde ge grönt, men så länge som man inte försökt lägga in något för att lura den så borde det fungera ganska bra.
 Kommentarer i Engine- och Program-klasserna beskriver det planerade flödet för programmet så att vi kan börja lägga in metoder som gör att programmet faktiskt följer den planen vi har.
+
+
+
+2021-03-04 20:30
+Martin Berntson
+
+Två nya klasser, Gamestate och Turn, är tillagda (men inte nödvändigtvis färdiga).
+Två tester för Gamestate, en för att se att Turn-listan är tom när en ny Gamestate skapas, en för att se att AddTurn() lägger till ett objekt i listan.
+Engine har uppdaterade kommentarer och fler ofyllda metoder, men jag tror att jag närmar mig en punkt där jag känner mig nöjd med hur programmet planeras köras.
+Snart kan man alltså börja med riktigt kodande av logik, och när det väl börjar borde det bli spelbart snabbt...
+Så länge som man har något interface i alla fall.
+Player-klassen vet jag inte riktigt hur jag ska använda mig av just nu, får diskutera det nästa gruppmöte.
+Så i kort gjorde jag lite arbete i 1-2h idag. Fastän planen var 4+.

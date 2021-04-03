@@ -21,7 +21,12 @@ namespace GameEngine.Classes
 
         private List<Player> GeneratePlayers(int players)
         {
-            throw new NotImplementedException();
+            var list = new List<Player>();
+            for (int i = 0; i < players; i++)
+            {
+                list.Add(new Player(i));
+            }
+            return list;
         }
 
         public Gamestate AddTurn()

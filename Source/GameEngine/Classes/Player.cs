@@ -13,5 +13,9 @@ namespace GameEngine.Classes
         public int Score { get; set; }
         public List<Piece> Pieces { get; set; }
         public ColorType Color { get; set; }
+        public Player(int i)
+        {
+           
+        }
     }
 }

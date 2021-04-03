@@ -57,11 +57,11 @@ namespace GameEngine
      */
 	public class Engine
     {
-		GameSettings Settings;
+		Gamestate state;
 
 		public Engine(GameSettings settings)
         {
-			Settings = settings;
+			state = new Gamestate(new Board(settings.Players, settings.BoardSize), settings.Players);
 		}
 
 		public void Save()
@@ -78,8 +78,38 @@ namespace GameEngine
 		private void StartGame()
         {
 			throw new NotImplementedException();
+			/*
+			 * How the game should go:
+			 * StartGame() should set up the board based on the GameSettings
+			 * it then calls the GameLoop, where we'll be stuck for the remainder of the game.
+			 */
 		}
+		private void GameLoop()
+        {
+			throw new NotImplementedException();
+			/*
+			 * Here in the GameLoop() we use a while(gameHasNoWinner){ DoStuff() }
+			 * First step is to create a new Turn() object.
+			 * Then the Turn.Roll value is set to a value from the Dice.Roll() method.
+			 * Then we call a "see if there's a valid move" method which checks the current state of the game and sees if the ActivePlayer can make a valid move.
+			 * If no, then we set Turn.PieceID to -1 (to indicate no piece is moved) and call the NextPlayer() method which checks who is the next valid ActivePlayer.
+			 * If there is a valid move, call a method which indicates to the player exactly what pieces are valid this turn, and let the player pick one.
+			 * Store their choice in Turn.PieceID.
+			 * Then send the entire Turn-object into the ExecuteTurn() method to have the turn play out. ExecuteTurn() should return a bool which decides if the ActivePlayer
+			 * remains the ActivePlayer or if you should call the NextPlayer() method to switch to the next one.
+			 * Then the loop reaches its end, and, if two or more players still remain in the game, the next turn starts.
+			 */
+        }
+		private int NextPlayer()
+        {
+			throw new NotImplementedException();
+        }
+		private void ExecuteTurn()
+        {
+			throw new NotImplementedException();
+        }
 
+		/*
 		private void TakeTurn()
         {
 			/* A single turn should look something like this:
@@ -94,9 +124,9 @@ namespace GameEngine
 			 *		The ActivePlayer can only select their own pieces
 			 *		The ActivePlayer can only select pieces that have legal moves to make
 			 *		If no legal moves are available, the turn is passed to the next player
-			 */
+			 *//*
 			throw new NotImplementedException();
-        }
+        }*/
 
         /*
 			Step 1: Get information about how to set up

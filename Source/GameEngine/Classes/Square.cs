@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class Square
+    public class Square
     {
         public int Id { get; }
         public List<Piece> Pieces { get; set; }

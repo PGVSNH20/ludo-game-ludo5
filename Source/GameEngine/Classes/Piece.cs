@@ -4,7 +4,7 @@ using System;
 
 namespace GameEngine.Classes
 {
-    class Piece
+    public class Piece
     {
         public ColorType Color { get; set; }
         public int PieceID { get; set; }

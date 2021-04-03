@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class Board
+    public class Board
     {
 
         //Spelare läggs i ordning i listor, den första indexen i en lista motsvar första spelaren.
@@ -24,6 +24,7 @@ namespace GameEngine.Classes
 
         public Board(int players, int spaces)
         {
+            MainBoard = new List<Square>();
             for (int i = 0; i < spaces; i++)
             {
                 MainBoard.Add(new Square(i));
@@ -40,6 +41,7 @@ namespace GameEngine.Classes
 
         public void CreateHomeStretches(int players)
         {
+            HomeStretches = new List<List<Square>>();
             //set up homestreches
             for (int p = 0; p < 4; p++)
             {

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Classes
 {
-    class Player
+    public class Player
     {
         public string Name { get; set; }
-        public bool PiecesLeft { get; set; }
+        public int Score { get; set; }
         public List<Piece> Pieces { get; set; }
         public ColorType Color { get; set; }
     }

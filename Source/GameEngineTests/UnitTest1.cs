@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using GameEngine;
+using GameEngine.Classes;
+using System.Collections.Generic;
 
 namespace GameEngineTests
 {
@@ -24,5 +26,20 @@ namespace GameEngineTests
             }
             Assert.True(NoRollOverSixOrBelowOne);
         }
+        [Test]
+        public void NewGamestate_ShouldHaveAnEmpty_TurnList()
+        {
+            var sut = new Gamestate(new Board(4, 40), new List<Player>());
+            Assert.AreEqual(sut.Turnlist.Count, 0);
+        }
+        [Test]
+        public void AddTurnMethod_ShouldAddANewTurnToList()
+        {
+            var sut = new Gamestate(new Board(4, 40), new List<Player>());
+            sut.AddTurn();
+            Assert.AreEqual(sut.Turnlist.Count, 1);
+        }
+
+
     }
 }

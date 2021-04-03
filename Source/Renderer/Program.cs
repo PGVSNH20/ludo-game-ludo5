@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using GameEngine;
+using GameEngine.Classes;
 
 namespace Renderer
 {
@@ -21,7 +22,7 @@ namespace Renderer
 
             //While rolling the dice it should 'shuffel' some random numbers for a short while before it shows the real number.
 
-            Engine newEngine = new Engine();
+            Engine newEngine = new Engine(new GameSettings(4, 44));
             Thread.Sleep(10000);
         }
     }

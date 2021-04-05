@@ -9,7 +9,7 @@ namespace GameEngine.Classes
     public class Square
     {
         public int Id { get; }
-        public List<Piece> Pieces { get; set; }
+        public List<int> PieceID { get; set; }
         public int Safe { get; }
         //safe for player #x
 

@@ -17,6 +17,7 @@ namespace GameEngine.Classes
         public List<Square> Nests {get; set;}
 
         public List<int> StartingPositions;
+        public List<Piece> Pieces { get; set; }
 
         
         

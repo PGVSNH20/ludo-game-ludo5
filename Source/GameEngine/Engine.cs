@@ -61,7 +61,7 @@ namespace GameEngine
 
 		public Engine(GameSettings settings)
         {
-			state = new Gamestate(new Board(settings.Players, settings.BoardSize), settings.Players);
+			state = new Gamestate(settings);
 		}
 
 		public void Save()

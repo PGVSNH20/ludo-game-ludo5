@@ -11,7 +11,6 @@ namespace GameEngine.Classes
     {
         public string Name { get; set; }
         public int Score { get; set; }
-        public List<Piece> Pieces { get; set; }
         public int Id { get; set; }
         public Player(int i)
         {

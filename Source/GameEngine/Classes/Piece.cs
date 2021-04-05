@@ -6,11 +6,9 @@ namespace GameEngine.Classes
 {
     public class Piece
     {
-        public ColorType Color { get; set; }
-        public int PieceID { get; set; }
-        public bool IsAtNest { get; set; }
-        public int PiecePosition { get; set; }
-        public bool PieceFinished { get; set; }
-        public bool PieceInFinishLine { get; set; }
+        public int HiddenID { get; set; }   // Unique ID for engine to keep pieces separate
+        public int PublicID { get; set; }   // Public ID for the player to use when choosing which to move
+        public int PlayerID { get; set; }
+        public int PiecePosition { get; set; } // -1 nest, -2 goal
     }
 }

@@ -104,11 +104,11 @@ namespace GameEngine
 				Console.WriteLine($"{state.Players[state.ActivePlayer].Name} rolled a {currentTurn.Roll}");
 				if (AreThereLegalMoves(currentTurn.Roll))
                 {
-					List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // KOmmer behöva nån typ av objekt
+					List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // Kommer behöva nån typ av objekt
 					Console.WriteLine("Please select which piece to move.");
 					foreach(int i in legalPieces)
                     {
-						Console.WriteLine(i);
+						Console.WriteLine($"Piece {i}");
                     }
 					currentTurn = CheckIfValidSelection(currentTurn); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet?
 																	  // Här sätts Turn.PieceID
@@ -137,7 +137,12 @@ namespace GameEngine
 
         private bool IsTheGameFinished()
         {
-            throw new NotImplementedException();
+			int numberOfActivePlayers = 0;
+			foreach (Player p in state.Players)
+            {
+				if (p.FinishedOrQuitTheGame == false) numberOfActivePlayers++;
+            }
+			return numberOfActivePlayers >= 2;
         }
 
         private Turn CheckIfValidSelection(Turn currentTurn)

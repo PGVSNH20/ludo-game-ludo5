@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace GameEngine
 {
@@ -75,9 +76,16 @@ namespace GameEngine
 			throw new NotImplementedException();
 		}
 
-		private void StartGame()
-        {
-			throw new NotImplementedException();
+		public void StartGame()
+		{
+			Console.WriteLine($"Game Starting, welcome\n");
+			foreach (Player player in state.Players)
+            {
+				Console.WriteLine($"     {player.Name}\n");
+			}
+			Console.WriteLine("We hope you'll enjoy our game!");
+			Thread.Sleep(5000);
+			GameLoop();
 			/*
 			 * How the game should go:
 			 * StartGame() should set up the board based on the GameSettings
@@ -86,7 +94,33 @@ namespace GameEngine
 		}
 		private void GameLoop()
         {
-			throw new NotImplementedException();
+			bool gameHasNoWinner = true;
+			while (gameHasNoWinner)
+            {
+				Turn currentTurn = new Turn();
+				Console.WriteLine("Press enter to roll the dice");
+				Console.ReadLine();
+				currentTurn.Roll = Dice.Roll();
+				Console.WriteLine($"{state.Players[state.ActivePlayer].Name} rolled a {currentTurn.Roll}");
+				if (AreThereLegalMoves(currentTurn.Roll))
+                {
+					List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // KOmmer behöva nån typ av objekt
+					Console.WriteLine("Please select which piece to move.");
+					foreach(int i in legalPieces)
+                    {
+						Console.WriteLine(i);
+                    }
+					currentTurn = CheckIfValidSelection(currentTurn); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet?
+																	  // Här sätts Turn.PieceID
+					ExecuteTurn(currentTurn);
+					state.ActivePlayer = NextPlayer();
+					gameHasNoWinner = IsTheGameFinished();
+                }
+                else
+                {
+					Console.WriteLine("No legal moves found, moving to next player");
+                }
+            }
 			/*
 			 * Here in the GameLoop() we use a while(gameHasNoWinner){ DoStuff() }
 			 * First step is to create a new Turn() object.
@@ -100,11 +134,32 @@ namespace GameEngine
 			 * Then the loop reaches its end, and, if two or more players still remain in the game, the next turn starts.
 			 */
         }
-		private int NextPlayer()
+
+        private bool IsTheGameFinished()
+        {
+            throw new NotImplementedException();
+        }
+
+        private Turn CheckIfValidSelection(Turn currentTurn)
+        {
+            throw new NotImplementedException();
+        }
+
+        private List<int> ListLegalMoves(int roll)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool AreThereLegalMoves(int roll)
+        {
+            throw new NotImplementedException();
+        }
+
+        private int NextPlayer()
         {
 			throw new NotImplementedException();
         }
-		private void ExecuteTurn()
+		private void ExecuteTurn(Turn currentTurn)
         {
 			throw new NotImplementedException();
         }

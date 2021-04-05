@@ -12,6 +12,7 @@ namespace GameEngine.Classes
         public Board Board { get; set; }
         public List<Player> Players { get; set; }
         public List<Turn> Turnlist { get; set; }
+        public int ActivePlayer { get; set; }
 
         public Gamestate(GameSettings settings)
         {
@@ -19,6 +20,7 @@ namespace GameEngine.Classes
             Players = Player.GeneratePlayers(settings.Players);
             Turnlist = new List<Turn>();
             Settings = settings;
+            ActivePlayer = 0;
         }
 
 

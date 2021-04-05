@@ -25,34 +25,15 @@ namespace GameEngine.Classes
         public Board(int players, int spaces)
         {
             MainBoard = new List<Square>();
+            int GoalStretch = 5;
 
-            for (int i = 0; i < spaces+5; i++)
+            for (int i = 0; i < spaces+GoalStretch; i++)
             {
                 MainBoard.Add(new Square(i));
             }
 
             StartingPositions = generateStartPosistions(players,spaces);
         
-        }
-
-
-        public void CreateHomeStretches(int startPosition)
-        {
-            HomeStretches = new List<List<Square>>();
-            //set up homestreches
-            for (int p = 0; p < 4; p++)
-            {
-                HomeStretches.Add(new List<Square>());
-            }
-
-            foreach (var colorList in HomeStretches)
-            {
-                for (int z = 0; z < 5; z++)
-                {
-                    colorList.Add(new Square(z));
-                }
-            }
-
         }
 
         private List<int> generateStartPosistions(int players, int Boardsize)

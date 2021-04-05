@@ -1,0 +1,23 @@
+Programflöde, Fia-Med-Knuff
+
+Skapa renderare
+Ta emot user input för antal spelare och storlek på spelplan
+    Validera settings, om fel, ge felmeddelande och börja om med user input
+Skapa en instans av Engine, ge den GameSettings-objekt
+    Engine skapar Gamestate med hjälp av GameSettings
+            Gamestate genererar Board m.h.a. settings-värderna
+                Board genererar listor med spaces, homestretches, startpositioner
+                Board genererar lista med Pieces
+            Gamestate genererar spelarlista med hjälp av settings-värderna 
+            Gamestate skapar tom Turn-lista för replays senare
+            Gamestate sparar settings för save/load-funktionalitet i framtiden
+            Gamestate sätter en spelare till ActivePlayer; spelare 0 börjar.
+    Engine startar GameLoop
+        GameLoop skapar en ny Turn
+        Turn.Roll sätts genom att spelaren rullar tärningen.
+        Om det finns legal moves så går vi vidare
+            En lista av legal moves skapas, spelaren får välja en
+            Turn.PieceID sätts baserat på spelarens val
+            Turens logik körs genom ExecuteTurn()-metoden som uppdaterar state.
+            Spelet kollar om det finns en vinnare, om inte så går vi till början av GameLoop()
+        Om det inte finns legal moves skriver den ut att det inte finns något och vi går till början av GameLoop()

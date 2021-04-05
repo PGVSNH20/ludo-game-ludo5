@@ -83,8 +83,8 @@ namespace GameEngine
             {
 				Console.WriteLine($"     {player.Name}\n");
 			}
-			Console.WriteLine("We hope you'll enjoy our game!");
-			Thread.Sleep(5000);
+			Console.WriteLine("We hope you'll enjoy our game!\nPress Enter to continue...");
+			Console.ReadLine();
 			GameLoop();
 			/*
 			 * How the game should go:

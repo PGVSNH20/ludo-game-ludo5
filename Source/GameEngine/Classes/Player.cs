@@ -13,6 +13,7 @@ namespace GameEngine.Classes
         public int Id { get; set; }
         public string Name { get; set; }
         public int Score { get; set; }
+        public bool FinishedOrQuitTheGame { get; set; }
         
         public Player(int id, String name)
         {

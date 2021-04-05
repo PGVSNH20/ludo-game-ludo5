@@ -26,29 +26,13 @@ namespace GameEngine.Classes
         {
             MainBoard = new List<Square>();
 
-            int i = 0;
-            for (; i < spaces; i++)
+            for (int i = 0; i < spaces+5; i++)
             {
                 MainBoard.Add(new Square(i));
             }
 
-            for (int z = 0; z < 5; z++)
-            {
-                MainBoard.Add(new Square(i++,true));
-            
-            
-            }
-            
-                
-            
-
-
-            
             StartingPositions = generateStartPosistions(players,spaces);
-
-
-
-
+        
         }
 
 

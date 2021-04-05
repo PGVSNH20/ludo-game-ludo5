@@ -19,10 +19,10 @@ namespace GameEngine.Classes
             Safe = false;
         }
 
-        public Square(int id, bool isSafe)
+        public Square(int id, bool safe)
         {
             Id = id;
-            Safe = true;
+            Safe = safe;
         }
     }
 }

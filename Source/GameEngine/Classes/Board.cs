@@ -12,7 +12,7 @@ namespace GameEngine.Classes
         //Standard board is 48 spaces long, + the home stretches.
        
         public List<Square> MainBoard{ get; set; }
-        public List<List<Square>> HomeStretches { get; set; }
+        public List<Square> HomeStretch { get; set; }
 
         public List<int> StartingPositions;
         public List<Piece> Pieces { get; set; }
@@ -21,10 +21,15 @@ namespace GameEngine.Classes
         {
             MainBoard = new List<Square>();
             int GoalStretch = 5;
-
-            for (int i = 0; i < spaces+GoalStretch; i++)
+            int i = 0;
+            for (; i < spaces; i++)
             {
                 MainBoard.Add(new Square(i));
+            }
+            HomeStretch = new List<Square>();
+            for (; i < spaces+GoalStretch; i++)
+            {
+                HomeStretch.Add(new Square(i));
             }
 
             StartingPositions = generateStartPosistions(players,spaces);

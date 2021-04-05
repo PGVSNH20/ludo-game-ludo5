@@ -15,19 +15,10 @@ namespace GameEngine.Classes
         public Gamestate(Board board, int players)
         {
             Board = board;
-            Players = GeneratePlayers(players);
+            Players = Player.GeneratePlayers(players);
             Turnlist = new List<Turn>();
         }
 
-        private List<Player> GeneratePlayers(int players)
-        {
-            var list = new List<Player>();
-            for (int i = 0; i < players; i++)
-            {
-                list.Add(new Player(i));
-            }
-            return list;
-        }
 
         public Gamestate AddTurn()
         {

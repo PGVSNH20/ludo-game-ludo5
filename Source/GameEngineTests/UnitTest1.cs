@@ -29,13 +29,13 @@ namespace GameEngineTests
         [Test]
         public void NewGamestate_ShouldHaveAnEmpty_TurnList()
         {
-            var sut = new Gamestate(new Board(4, 40), 4);
+            var sut = new Gamestate(new GameSettings(4, 40));
             Assert.AreEqual(sut.Turnlist.Count, 0);
         }
         [Test]
         public void AddTurnMethod_ShouldAddANewTurnToList()
         {
-            var sut = new Gamestate(new Board(4, 40), 4);
+            var sut = new Gamestate(new GameSettings(4, 40));
             sut.AddTurn();
             Assert.AreEqual(sut.Turnlist.Count, 1);
         }

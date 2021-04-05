@@ -104,17 +104,13 @@ namespace GameEngine
 				Console.WriteLine($"{state.Players[state.ActivePlayer].Name} rolled a {currentTurn.Roll}");
 				if (AreThereLegalMoves(currentTurn.Roll))
                 {
-					List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // Kommer behöva nån typ av objekt
-					Console.WriteLine("Please select which piece to move.");
-					foreach(int i in legalPieces)
-                    {
-						Console.WriteLine($"Piece {i}");
-                    }
-					currentTurn = CheckIfValidSelection(currentTurn); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet?
-																	  // Här sätts Turn.PieceID
-					ExecuteTurn(currentTurn);
-					state.ActivePlayer = NextPlayer();
-					gameHasNoWinner = IsTheGameFinished();
+                    List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // Kommer behöva nån typ av objekt
+                    PrintLegalMoves(legalPieces);
+                    currentTurn = CheckIfValidSelection(currentTurn, legalPieces); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet?
+                                                                                   // Här sätts Turn.PieceID
+                    ExecuteTurn(currentTurn);
+                    state.ActivePlayer = NextPlayer();
+                    gameHasNoWinner = IsTheGameFinished();
                 }
                 else
                 {
@@ -135,6 +131,15 @@ namespace GameEngine
 			 */
         }
 
+        private static void PrintLegalMoves(List<int> legalPieces)
+        {
+            Console.WriteLine("Please select which piece to move.");
+            foreach (int i in legalPieces)
+            {
+                Console.WriteLine($"Piece {i}");
+            }
+        }
+
         private bool IsTheGameFinished()
         {
 			int numberOfActivePlayers = 0;
@@ -145,9 +150,26 @@ namespace GameEngine
 			return numberOfActivePlayers >= 2;
         }
 
-        private Turn CheckIfValidSelection(Turn currentTurn)
+        private Turn CheckIfValidSelection(Turn currentTurn, List<int> legalPieces)
         {
-            throw new NotImplementedException();
+            try
+			{
+				int input = Convert.ToInt32(Console.ReadLine());
+				if (legalPieces.Contains(input))
+                {
+					currentTurn.PieceID = input;
+					return currentTurn;
+                }
+				Console.WriteLine("Invalid entry");
+				PrintLegalMoves(legalPieces);
+				return CheckIfValidSelection(currentTurn, legalPieces);
+
+			}
+            catch
+            {
+				Console.WriteLine("Invalid entry");
+				return CheckIfValidSelection(currentTurn, legalPieces);
+            }
         }
 
         private List<int> ListLegalMoves(int roll)
@@ -166,7 +188,20 @@ namespace GameEngine
         }
 		private void ExecuteTurn(Turn currentTurn)
         {
-			throw new NotImplementedException();
+			for(int i = 0; i < state.Board.Pieces.Count; i++)
+            {
+				if (state.Board.Pieces[i].HiddenID == currentTurn.PieceID)
+                {
+					// state.Board.StartingPositions[state.ActivePlayer] <- starting position of the current player
+					if (state.Board.Pieces[i].PiecePosition < state.Board.StartingPositions[state.ActivePlayer] 
+						&& state.Board.Pieces[i].PiecePosition + currentTurn.Roll > state.Board.StartingPositions[state.ActivePlayer])
+                    {
+						int rollOverflow = state.Board.Pieces[i].PiecePosition + currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
+
+						
+					}
+                }
+            }
         }
 
 		/*

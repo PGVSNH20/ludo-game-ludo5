@@ -42,7 +42,7 @@ namespace GameEngine.Classes
             var list = new List<Player>();
             for (int i = 0; i < players; i++)
             {
-                list.Add(new Player(i));
+                list.Add(new Player(i,"Bob"));
             }
             return list;
         }

@@ -25,12 +25,25 @@ namespace GameEngine.Classes
         public Board(int players, int spaces)
         {
             MainBoard = new List<Square>();
-            for (int i = 0; i < spaces; i++)
+
+            int i = 0;
+            for (; i < spaces; i++)
             {
                 MainBoard.Add(new Square(i));
             }
 
-            CreateHomeStretches(players);
+            for (int z = 0; z < 5; z++)
+            {
+                MainBoard.Add(new Square(i++,true));
+            
+            
+            }
+            
+                
+            
+
+
+            
             StartingPositions = generateStartPosistions(players,spaces);
 
 
@@ -39,7 +52,7 @@ namespace GameEngine.Classes
         }
 
 
-        public void CreateHomeStretches(int players)
+        public void CreateHomeStretches(int startPosition)
         {
             HomeStretches = new List<List<Square>>();
             //set up homestreches
@@ -70,6 +83,11 @@ namespace GameEngine.Classes
             }
 
             return startPositions;
+
+        }
+
+        public void createPieces()
+        {
 
         }
     }

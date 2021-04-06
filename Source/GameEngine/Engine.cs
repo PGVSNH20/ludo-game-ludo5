@@ -1,12 +1,7 @@
 ﻿using GameEngine.Classes;
 using GameEngine.EngineFunctionality;
 using System;
-using System.ComponentModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 
 namespace GameEngine
 {
@@ -19,11 +14,10 @@ namespace GameEngine
 			State = new Gamestate(settings);
 		}
 
-        #region Game start and main loop
         public void StartGame()
 		{
 			Console.WriteLine($"Game Starting, welcome");
-			foreach (Classes.Player player in State.Players)
+			foreach (Player player in State.Players)
             {
                 Console.WriteLine($"     {player.Name}");
 			}
@@ -36,7 +30,7 @@ namespace GameEngine
 			bool gameHasNoWinner = true;
 			while (gameHasNoWinner)
             {
-				while (!EngineFunctionality.PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
+				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
 
 				Turn currentTurn = new();
 				Console.WriteLine("Press enter to roll the dice");
@@ -66,24 +60,17 @@ namespace GameEngine
                 }
             }
         }
-        #endregion
-
-        #region Player checks
-        #endregion
 
         private bool IsTheGameFinished()
         {
 			int numberOfActivePlayers = 0;
-			foreach (Classes.Player p in State.Players)
+			foreach (Player p in State.Players)
             {
 				if (p.FinishedOrQuitTheGame == false) numberOfActivePlayers++;
             }
 			return numberOfActivePlayers >= 2;
         }
 
-        #region Movement checks and handling
-        
-        #endregion
         private void NextPlayer()
         {
 			// Only call this method if you've already checked that the next active player should be found.

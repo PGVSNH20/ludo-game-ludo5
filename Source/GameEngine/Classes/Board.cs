@@ -25,22 +25,16 @@ namespace GameEngine.Classes
             {
                 MainBoard.Add(new Square(i));
             }
-            for (; i < spaces+GoalStretch; i++)
+            for (; i < spaces + GoalStretch; i++)
             {
                 HomeStretch.Add(new Square(i));
             }
 
-            StartingPositions = generateStartPosistions(players,spaces);
+            StartingPositions = generateStartPosistions(players, spaces);
+            Pieces = Piece.GeneratePieces(players);
 
-            for (int j = 0; j < players; j++)       // For each player
-            {
-                for (int k = 0; k < 4; k++)         // Four per player
-                {
-                    Pieces.Add(new Piece(k, j));
-                }
-            }
-        
         }
+
 
 
         //variable size
@@ -57,8 +51,7 @@ namespace GameEngine.Classes
             }
 
             StartingPositions = generateStartPosistions(players, spaces);
-
-
+            Pieces = Piece.GeneratePieces(players);
         }
 
         private List<int> generateStartPosistions(int players, int Boardsize)

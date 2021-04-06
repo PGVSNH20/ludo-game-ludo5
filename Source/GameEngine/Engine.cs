@@ -118,12 +118,12 @@ namespace GameEngine
 			switch (piecePosition) // This switch decides how to move the piece forward.
             {
 				case -1:
-					State.Board.Pieces[roll].PiecePosition = startPosition;
+					State.Board.Pieces[pieceId].PiecePosition = startPosition;
 					break;
 				default :
 					if (piecePosition >= State.Board.MainBoard.Count)
                     {
-						State.Board.Pieces[roll].PiecePosition += roll;
+						State.Board.Pieces[pieceId].PiecePosition += roll;
 						break;
 					}
 					if (piecePosition+roll >= boardSize)
@@ -134,12 +134,14 @@ namespace GameEngine
 							break;
 						}
 						piecePosition += roll; // If player one, enter home stretch or goal
+						break;
 					}
 					if (piecePosition < startPosition && piecePosition + roll >= startPosition)
                     {
 						piecePosition = boardSize + piecePosition + roll - startPosition;
 						break; // Basically, piecePosition + roll - startPosition is the amount of overflow when you reach the end of your track... And boardSize is, well, end of the board.
                     } // I am too tired to do the math on whether I should be removing a 1 from boardSize atm. Testing will show this later. I guess? Could do math, but...
+					piecePosition += roll;
 					break;
 			}
 			if (piecePosition == State.Board.MainBoard.Count + 6) // Checks if the piece is "in the goal", if it is it's set to the true goal value, player gets a point, and checks if player has finished the game.

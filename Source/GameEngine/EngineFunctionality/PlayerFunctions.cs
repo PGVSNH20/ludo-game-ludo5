@@ -11,7 +11,7 @@ namespace GameEngine.EngineFunctionality
     {
         public static bool CheckIfActivePlayerIsInTheGame(Gamestate state)
         {
-            foreach (PlayerFunctions p in state.PlayersStillPlaying)
+            foreach (Player p in state.PlayersStillPlaying)
             {
                 if (state.ActivePlayer == p.Id) return true;
             }

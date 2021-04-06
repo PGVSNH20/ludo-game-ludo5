@@ -79,10 +79,10 @@ namespace GameEngine
 
 		public void StartGame()
 		{
-			Console.WriteLine($"Game Starting, welcome\n");
+			Console.WriteLine($"Game Starting, welcome");
 			foreach (Player player in state.Players)
             {
-				Console.WriteLine($"     {player.Name}\n");
+				Console.WriteLine($"     {player.Name}");
 			}
 			Console.WriteLine("We hope you'll enjoy our game!\nPress Enter to continue...");
 			Console.ReadLine();
@@ -222,11 +222,11 @@ namespace GameEngine
         }
 
         private bool CheckIfPieceCanMove(int roll, Piece p)
-        {
-			if (p.PiecePosition == -1 && roll != 6) return false;
+		{
+			if (p.PiecePosition == -1) return roll == 6;
 			if (p.PiecePosition == -2) return false;
-			if (p.PiecePosition + roll <= state.Board.MainBoard.Count + 5) return true;
-			return false;
+			if (p.PiecePosition + roll > state.Board.MainBoard.Count + 5) return false;
+			return true;
 		}
 
         private List<Piece> GetActivePlayersPieces()
@@ -284,6 +284,7 @@ namespace GameEngine
             {
 				state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
 			}
+			Console.WriteLine($"Piece moved to {state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition}");
 			// TODO: Skriv klart? Är det klart?
         }
 

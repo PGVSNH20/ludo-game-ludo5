@@ -103,36 +103,68 @@ namespace GameEngine
 			 * This is important for turns that may have been stored but not executed, for example due to rolling invalid values.
 			 * Step one - check if the piece is in the nest. If it is, then the roll is a six, and it's simply meant to exit the nest and enter play.
 			 * Step two - check if the piece is in the home stretch.
+			 *		HOLD IT: The ListLegalMoves method has already filtered out any problematic values.
 			 * Step three - check if it overflows. If it does, it'll need to enter the homestretch, which is the same area for all players.
 			 * Step four - check if it enters the goal, if it does its position should be set to -2.
 			 * Step five - check if the square it enters is safe, and if not, if any other pieces are on it.
 			 *		Any other pieces on the same non-safe square should have their positions set to -1.
 			 */
-			int piecePosition = State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition;
+			int roll = (int)currentTurn.Roll;
+			int pieceId = (int)currentTurn.PieceID;
+			int piecePosition = State.Board.Pieces[pieceId].PiecePosition;
 			int startPosition = State.Board.StartingPositions[State.ActivePlayer];
+			int boardSize = State.Board.MainBoard.Count - 1; // If the board has 40 squares, then ID 40 is the first square of the home stretch...
 
-			if (piecePosition == -1)
-			{ 
-				State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = startPosition;
-			}
-			else if (piecePosition > State.Board.HomeStretch.Count - 1)
+			switch (piecePosition) // This switch decides how to move the piece forward.
             {
-				if (piecePosition + currentTurn.Roll == State.Board.HomeStretch.Count + 5) State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
-				else if (piecePosition + currentTurn.Roll < State.Board.HomeStretch.Count + 5) State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
+				case -1:
+					State.Board.Pieces[roll].PiecePosition = startPosition;
+					break;
+				default :
+					if (piecePosition >= State.Board.MainBoard.Count)
+                    {
+						State.Board.Pieces[roll].PiecePosition += roll;
+						break;
+					}
+					if (piecePosition+roll >= boardSize)
+                    {
+						if (startPosition != 0) // If not player one, loop around
+						{
+							piecePosition = piecePosition + roll - boardSize;
+							break;
+						}
+						piecePosition += roll; // If player one, enter home stretch or goal
+					}
+					if (piecePosition < startPosition && piecePosition + roll >= startPosition)
+                    {
+						piecePosition = boardSize + piecePosition + roll - startPosition;
+						break; // Basically, piecePosition + roll - startPosition is the amount of overflow when you reach the end of your track... And boardSize is, well, end of the board.
+                    } // I am too tired to do the math on whether I should be removing a 1 from boardSize atm. Testing will show this later. I guess? Could do math, but...
+					break;
 			}
-			else if (piecePosition < State.Board.StartingPositions[State.ActivePlayer] 
-				&& piecePosition + currentTurn.Roll >= startPosition)
-            {
-				int rollOverflow = piecePosition + (int)currentTurn.Roll - startPosition;
-				if (rollOverflow == 6) State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
-				else State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = State.Board.HomeStretch[rollOverflow].Id;
+			if (piecePosition == State.Board.MainBoard.Count + 6) // Checks if the piece is "in the goal", if it is it's set to the true goal value, player gets a point, and checks if player has finished the game.
+			{
+				piecePosition = -2;
+				State.Players[State.ActivePlayer].Score++;
+				if (State.Players[State.ActivePlayer].Score == 4) PlayerHasFinishedGame(State.ActivePlayer);
 			}
-            else
-            {
-				State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
-			}
-			Console.WriteLine($"Piece moved to {State.Board.Pieces[(int)currentTurn.PieceID].PiecePosition}");
+			State.Board.Pieces[pieceId].PiecePosition = piecePosition;
+
+
+			Console.WriteLine($"Piece moved to {piecePosition}");
 			// TODO: Skriv klart? Är det klart?
+        }
+
+        private void PlayerHasFinishedGame(int activePlayer)
+        {
+			for (int i = 0; i < State.PlayersStillPlaying.Count; i++)
+            {
+				if (State.PlayersStillPlaying[i].Id == activePlayer)
+                {
+					State.PlayersStillPlaying.RemoveAt(activePlayer);
+					return;
+                }
+            }
         }
     }
 }

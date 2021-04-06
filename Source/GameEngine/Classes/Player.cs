@@ -43,7 +43,8 @@ namespace GameEngine.Classes
             var list = new List<Player>();
             for (int i = 0; i < players; i++)
             {
-                list.Add(new Player(i,"Bob"));
+                Console.WriteLine("Please enter a name:");
+                list.Add(new Player(i,Console.ReadLine()));
             }
             return list;
         }

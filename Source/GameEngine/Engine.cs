@@ -113,6 +113,7 @@ namespace GameEngine
                 else
                 {
 					Console.WriteLine("No legal moves found, moving to next player");
+					NextPlayer();
                 }
 				state.Turnlist.Add(currentTurn);
                 if (CheckIfActivePlayerHasWon())
@@ -225,8 +226,8 @@ namespace GameEngine
 		{
 			if (p.PiecePosition == -1) return roll == 6;
 			if (p.PiecePosition == -2) return false;
-			if (p.PiecePosition + roll > state.Board.MainBoard.Count + 5) return false;
-			return true;
+			if (p.PiecePosition + roll <= state.Board.MainBoard.Count + 5) return true;
+			return false;
 		}
 
         private List<Piece> GetActivePlayersPieces()
@@ -263,20 +264,22 @@ namespace GameEngine
 			 * Step five - check if the square it enters is safe, and if not, if any other pieces are on it.
 			 *		Any other pieces on the same non-safe square should have their positions set to -1.
 			 */
-			
-			if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition == -1)
+			int piecePosition = state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition;
+			int startPosition = state.Board.StartingPositions[state.ActivePlayer];
+
+			if (piecePosition == -1)
 			{ 
-				state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = state.Board.StartingPositions[state.ActivePlayer];
+				state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = startPosition;
 			}
-			else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition > state.Board.HomeStretch.Count - 1)
+			else if (piecePosition > state.Board.HomeStretch.Count - 1)
             {
-				if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll == state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
-				else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll < state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
+				if (piecePosition + currentTurn.Roll == state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
+				else if (piecePosition + currentTurn.Roll < state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
 			}
-			else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition < state.Board.StartingPositions[state.ActivePlayer] 
-				&& state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll >= state.Board.StartingPositions[state.ActivePlayer])
+			else if (piecePosition < state.Board.StartingPositions[state.ActivePlayer] 
+				&& piecePosition + currentTurn.Roll >= startPosition)
             {
-				int rollOverflow = state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + (int)currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
+				int rollOverflow = piecePosition + (int)currentTurn.Roll - startPosition;
 				if (rollOverflow == 6) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
 				else state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = state.Board.HomeStretch[rollOverflow].Id;
 			}

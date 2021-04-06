@@ -73,6 +73,7 @@ namespace GameEngine
 		public Engine Load()
 		{
 			// Takes a gamestate from the database and sets it up to allow play to continue
+			// This should not call the GameLoop untill the gamestate is fully set up - instead it should do a foreach on the turnlist and send all turns to the ExecuteTurn-method.
 			throw new NotImplementedException();
 		}
 
@@ -97,24 +98,32 @@ namespace GameEngine
 			bool gameHasNoWinner = true;
 			while (gameHasNoWinner)
             {
-				Turn currentTurn = new Turn();
+				while (!CheckIfActivePlayerIsInTheGame()) { NextPlayer(); }
+
+				Turn currentTurn = new();
 				Console.WriteLine("Press enter to roll the dice");
 				Console.ReadLine();
 				currentTurn.Roll = Dice.Roll();
 				Console.WriteLine($"{state.Players[state.ActivePlayer].Name} rolled a {currentTurn.Roll}");
-				if (AreThereLegalMoves(currentTurn.Roll))
+				if (AreThereLegalMoves((int)currentTurn.Roll))
                 {
-                    List<int> legalPieces = ListLegalMoves(currentTurn.Roll);  // Kommer behöva nån typ av objekt
+                    List<int> legalPieces = ListLegalMoves((int)currentTurn.Roll);  // Kommer behöva nån typ av objekt
                     PrintLegalMoves(legalPieces);
-                    currentTurn = CheckIfValidSelection(currentTurn, legalPieces); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet?
+                    currentTurn = CheckIfValidSelection(currentTurn, legalPieces); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet av en stack overflow?
                                                                                    // Här sätts Turn.PieceID
                     ExecuteTurn(currentTurn);
-                    state.ActivePlayer = NextPlayer();
+                    NextPlayer();
                     gameHasNoWinner = IsTheGameFinished();
                 }
                 else
                 {
 					Console.WriteLine("No legal moves found, moving to next player");
+                }
+				state.Turnlist.Add(currentTurn);
+                if (CheckIfActivePlayerHasWon())
+                {
+					state.PlayersStillPlaying.RemoveAt(state.ActivePlayer);
+					if (state.PlayersStillPlaying.Count < 2) gameHasNoWinner = false;
                 }
             }
 			/*
@@ -129,6 +138,25 @@ namespace GameEngine
 			 * remains the ActivePlayer or if you should call the NextPlayer() method to switch to the next one.
 			 * Then the loop reaches its end, and, if two or more players still remain in the game, the next turn starts.
 			 */
+        }
+
+        private bool CheckIfActivePlayerIsInTheGame()
+        {
+            foreach (Player p in state.PlayersStillPlaying)
+            {
+				if (state.ActivePlayer == p.Id) return true;
+			}
+			return false;
+        }
+
+        private bool CheckIfActivePlayerHasWon()
+        {
+			List<Piece> pieces = getActivePlayersPieces();
+			foreach (Piece p in pieces)
+            {
+				if (p.PiecePosition != -2) return false;
+            }
+			return true;
         }
 
         private static void PrintLegalMoves(List<int> legalPieces)
@@ -179,26 +207,65 @@ namespace GameEngine
 
         private bool AreThereLegalMoves(int roll)
         {
-            throw new NotImplementedException();
+			/*
+			 * Cases to check:
+			 * Is it in nest? If so, is the roll a six?
+			 * Is it in the goal? If so it can't move.
+			 */
+			List<Piece> activePlayerPieces = getActivePlayersPieces();
+			foreach (Piece p in activePlayerPieces)
+            {
+				if (CheckIfPieceCanMove(roll, p)) return true;
+            }
+			return false;
         }
 
-        private int NextPlayer()
+        private bool CheckIfPieceCanMove(int roll, Piece p)
         {
-			throw new NotImplementedException();
+			if (p.PiecePosition == -1 && roll != 6) return false;
+			if (p.PiecePosition == -2) return false;
+			if (p.PiecePosition + roll <= state.Board.MainBoard.Count + 5) return true;
+			return false;
+		}
+
+        private List<Piece> getActivePlayersPieces()
+        {
+			List<Piece> activePlayerPieces = new List<Piece>();
+			foreach (Piece p in state.Board.Pieces)
+            {
+				if (p.PlayerID == state.ActivePlayer) activePlayerPieces.Add(p);
+            }
+			return activePlayerPieces;
+        }
+
+        private void NextPlayer()
+        {
+			// Only call this method if you've already checked that the next active player should be found.
+			state.ActivePlayer++;
+			if (state.ActivePlayer == state.Players.Count) state.ActivePlayer = 0;
+			// It increments the ActivePlayer variable.
+			// If ActivePlayer is equal to Players.Count it means that it should roll over to zero (since Players is a list starting from 0, not one.)
         }
 		private void ExecuteTurn(Turn currentTurn)
         {
+			if (String.IsNullOrEmpty(Convert.ToString(currentTurn.PieceID))) return;
+			if (String.IsNullOrEmpty(Convert.ToString(currentTurn.Roll))) return;
+			// By having Roll and PieceID be nullable instead of just normal integers, as well as being set to null in the Turn() constructor
+			// These tests can abort the ExecuteTurn method early if either value is unassigned. There may be a better way of doing this, but...
+			// I'm not really up for trying to find a better way right now. It should work at least?
+			
 			for(int i = 0; i < state.Board.Pieces.Count; i++)
             {
 				if (state.Board.Pieces[i].HiddenID == currentTurn.PieceID)
                 {
 					// state.Board.StartingPositions[state.ActivePlayer] <- starting position of the current player
 					if (state.Board.Pieces[i].PiecePosition < state.Board.StartingPositions[state.ActivePlayer] 
-						&& state.Board.Pieces[i].PiecePosition + currentTurn.Roll > state.Board.StartingPositions[state.ActivePlayer])
+						&& state.Board.Pieces[i].PiecePosition + currentTurn.Roll >= state.Board.StartingPositions[state.ActivePlayer])
                     {
-						int rollOverflow = state.Board.Pieces[i].PiecePosition + currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
+						int rollOverflow = state.Board.Pieces[i].PiecePosition + (int)currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
+						state.Board.Pieces[i].PiecePosition = state.Board.HomeStretch[rollOverflow].Id;
+						// TODO: finish this code
 
-						
 					}
                 }
             }

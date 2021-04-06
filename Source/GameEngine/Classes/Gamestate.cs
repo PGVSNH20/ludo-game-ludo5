@@ -13,6 +13,7 @@ namespace GameEngine.Classes
         public List<Player> Players { get; set; }
         public List<Turn> Turnlist { get; set; }
         public int ActivePlayer { get; set; }
+        public List<Player> PlayersStillPlaying { get; set; }
 
         public Gamestate(GameSettings settings)
         {
@@ -21,6 +22,7 @@ namespace GameEngine.Classes
             Turnlist = new List<Turn>();
             Settings = settings;
             ActivePlayer = 0;
+            PlayersStillPlaying = GetAllPlayers();
         }
 
 
@@ -28,6 +30,16 @@ namespace GameEngine.Classes
         {
             Turnlist.Add(new Turn());
             return this;
+        }
+
+        private List<Player> GetAllPlayers()
+        {
+            List<Player> allPlayers = new List<Player>();
+            foreach (Player p in Players)
+            {
+                allPlayers.Add(p);
+            }
+            return allPlayers;
         }
     }
 }

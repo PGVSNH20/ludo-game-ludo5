@@ -26,6 +26,7 @@ namespace GameEngine.Classes
             {
                 MainBoard.Add(new Square(i));
             }
+            
             HomeStretch = new List<Square>();
             for (; i < spaces+GoalStretch; i++)
             {

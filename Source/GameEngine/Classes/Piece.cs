@@ -1,6 +1,6 @@
 ﻿using GameEngine.Enumerations;
 using System;
-
+using System.Collections.Generic;
 
 namespace GameEngine.Classes
 {
@@ -19,6 +19,18 @@ namespace GameEngine.Classes
             PlayerID = playId;
             PiecePosition = -1;
             incrementedId++;
+        }
+        public static List<Piece> GeneratePieces(int players)
+        {
+            List<Piece> pieces = new();
+            for (int j = 0; j < players; j++)       // For each player
+            {
+                for (int k = 0; k < 4; k++)         // Four per player
+                {
+                    pieces.Add(new Piece(k, j));
+                }
+            }
+            return pieces;
         }
     }
 }

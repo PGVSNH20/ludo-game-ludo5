@@ -57,3 +57,14 @@ Stökade om lite i klasserna så att värden som har samma funktion inte exister
 La till flera metoder som inte har logik än, fyllde ut Engine.GameLoop() med logik, finns mycket kvar innan det kan köras dock.
 Kom fram till att vi kan behöva ett "Legal moves"-objekt eller nåt sånt? Osäker.
 Ska fortsätta med mer senare idag.
+
+
+2021-04-06 20:48
+Martin Berntson, Robert von Krusenstjerna, Sanna Edström, Yan Rosén
+
+Vi började dagen med lite grupparbete alla fyra.
+Gjorde en del kodande i spelmotorn, separerade upp koden från Engine.cs i flera klasser då den började bli lite stor.
+Skapade några tester för en metod för att se att den fungerade ordentligt, fler kommer behövas för andra metoder.
+En initiell version av UI för spelet skapades, och diskussion kring ett API för att agera mellan spelmotorn och det program som ska presentera det diskuterades.
+
+Martin och Robert tog lite extra kodande (och diskussion kring koden) på kvällen.

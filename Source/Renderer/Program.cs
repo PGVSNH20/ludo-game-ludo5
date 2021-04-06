@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using GameEngine;
 using GameEngine.Classes;
@@ -21,9 +22,25 @@ namespace Renderer
              */
 
             //While rolling the dice it should 'shuffel' some random numbers for a short while before it shows the real number.
+            var playerNames = new List<string>();
+            playerNames.Add("M");
+            playerNames.Add("R");
+            playerNames.Add("S");
+            playerNames.Add("Y");
+            var state = new Gamestate(new GameSettings(playerNames, 40));
+            Console.WriteLine("Printing all MainBoard Squares \n###############");
+            foreach(Square s in state.Board.MainBoard)
+            {
+                Console.WriteLine(s.Id);
+            }
+            Console.WriteLine("\nPrinting all HomeStretch Squares \n###############");
 
-            Engine newEngine = new Engine(new GameSettings(4, 44));
-            newEngine.StartGame();
+            foreach (Square s in state.Board.HomeStretch)
+            {
+                Console.WriteLine(s.Id);
+            }
+            // Engine newEngine = new Engine(new GameSettings(playerNames, 44));
+            // newEngine.StartGame();
         }
     }
 }

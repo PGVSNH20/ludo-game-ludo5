@@ -38,13 +38,12 @@ namespace GameEngine.Classes
             Score = score;  
         }
 
-        public static List<Player> GeneratePlayers(int players)
+        public static List<Player> GeneratePlayers(List<string> players)
         {
             var list = new List<Player>();
-            for (int i = 0; i < players; i++)
+            for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("Please enter a name:");
-                list.Add(new Player(i,Console.ReadLine()));
+                list.Add(new Player(i, players[i]));
             }
             return list;
 

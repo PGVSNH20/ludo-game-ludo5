@@ -35,11 +35,9 @@ namespace Beta
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textInput = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -65,13 +63,18 @@ namespace Beta
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox35 = new System.Windows.Forms.PictureBox();
+            this.pictureBox36 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -97,11 +100,17 @@ namespace Beta
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(632, 373);
+            this.button1.Location = new System.Drawing.Point(635, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 27);
             this.button1.TabIndex = 0;
@@ -113,7 +122,7 @@ namespace Beta
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(632, 93);
+            this.listBox1.Location = new System.Drawing.Point(635, 153);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(145, 274);
             this.listBox1.TabIndex = 1;
@@ -143,7 +152,7 @@ namespace Beta
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(496, 329);
+            this.pictureBox3.Location = new System.Drawing.Point(496, 441);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(83, 82);
             this.pictureBox3.TabIndex = 4;
@@ -154,24 +163,24 @@ namespace Beta
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.RoyalBlue;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Location = new System.Drawing.Point(100, 417);
+            this.pictureBox4.Location = new System.Drawing.Point(100, 513);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(82, 81);
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // textBox1
+            // textInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(632, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 23);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textInput.Location = new System.Drawing.Point(635, 91);
+            this.textInput.Name = "textInput";
+            this.textInput.Size = new System.Drawing.Size(145, 23);
+            this.textInput.TabIndex = 6;
+            this.textInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(632, 64);
+            this.button2.Location = new System.Drawing.Point(635, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 23);
             this.button2.TabIndex = 7;
@@ -188,26 +197,6 @@ namespace Beta
             this.pictureBox5.Size = new System.Drawing.Size(38, 38);
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.SeaShell;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(188, 108);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.SeaShell;
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(232, 108);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox7.TabIndex = 10;
-            this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -253,7 +242,7 @@ namespace Beta
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox13.Location = new System.Drawing.Point(452, 373);
+            this.pictureBox13.Location = new System.Drawing.Point(452, 461);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(38, 38);
             this.pictureBox13.TabIndex = 23;
@@ -263,7 +252,7 @@ namespace Beta
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox14.Location = new System.Drawing.Point(408, 373);
+            this.pictureBox14.Location = new System.Drawing.Point(408, 461);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(38, 38);
             this.pictureBox14.TabIndex = 22;
@@ -273,7 +262,7 @@ namespace Beta
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox15.Location = new System.Drawing.Point(364, 373);
+            this.pictureBox15.Location = new System.Drawing.Point(364, 461);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(38, 38);
             this.pictureBox15.TabIndex = 21;
@@ -283,7 +272,7 @@ namespace Beta
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox16.Location = new System.Drawing.Point(320, 373);
+            this.pictureBox16.Location = new System.Drawing.Point(320, 461);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(38, 38);
             this.pictureBox16.TabIndex = 20;
@@ -293,7 +282,7 @@ namespace Beta
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox17.Location = new System.Drawing.Point(276, 373);
+            this.pictureBox17.Location = new System.Drawing.Point(276, 461);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(38, 38);
             this.pictureBox17.TabIndex = 19;
@@ -303,7 +292,7 @@ namespace Beta
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox18.Location = new System.Drawing.Point(232, 373);
+            this.pictureBox18.Location = new System.Drawing.Point(232, 461);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(38, 38);
             this.pictureBox18.TabIndex = 18;
@@ -313,7 +302,7 @@ namespace Beta
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox19.Location = new System.Drawing.Point(188, 373);
+            this.pictureBox19.Location = new System.Drawing.Point(188, 461);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(38, 38);
             this.pictureBox19.TabIndex = 17;
@@ -323,7 +312,7 @@ namespace Beta
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.RoyalBlue;
             this.pictureBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox20.Location = new System.Drawing.Point(144, 373);
+            this.pictureBox20.Location = new System.Drawing.Point(144, 461);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(38, 38);
             this.pictureBox20.TabIndex = 16;
@@ -453,18 +442,95 @@ namespace Beta
             // 
             this.pictureBox34.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox34.Location = new System.Drawing.Point(452, 329);
+            this.pictureBox34.Location = new System.Drawing.Point(452, 417);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(38, 38);
             this.pictureBox34.TabIndex = 37;
             this.pictureBox34.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.SeaShell;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(188, 108);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox6.TabIndex = 38;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.SeaShell;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Location = new System.Drawing.Point(232, 108);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox7.TabIndex = 39;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.FloralWhite;
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Location = new System.Drawing.Point(452, 329);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox9.TabIndex = 40;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox33
+            // 
+            this.pictureBox33.BackColor = System.Drawing.Color.FloralWhite;
+            this.pictureBox33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox33.Location = new System.Drawing.Point(100, 417);
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox33.TabIndex = 41;
+            this.pictureBox33.TabStop = false;
+            // 
+            // pictureBox35
+            // 
+            this.pictureBox35.BackColor = System.Drawing.Color.FloralWhite;
+            this.pictureBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox35.Location = new System.Drawing.Point(100, 461);
+            this.pictureBox35.Name = "pictureBox35";
+            this.pictureBox35.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox35.TabIndex = 42;
+            this.pictureBox35.TabStop = false;
+            // 
+            // pictureBox36
+            // 
+            this.pictureBox36.BackColor = System.Drawing.Color.FloralWhite;
+            this.pictureBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox36.Location = new System.Drawing.Point(452, 373);
+            this.pictureBox36.Name = "pictureBox36";
+            this.pictureBox36.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox36.TabIndex = 43;
+            this.pictureBox36.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(635, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "ENTER YOUR NAME";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(800, 558);
+            this.ClientSize = new System.Drawing.Size(809, 723);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox36);
+            this.Controls.Add(this.pictureBox35);
+            this.Controls.Add(this.pictureBox33);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox34);
             this.Controls.Add(this.pictureBox32);
             this.Controls.Add(this.pictureBox29);
@@ -490,11 +556,9 @@ namespace Beta
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textInput);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -508,8 +572,6 @@ namespace Beta
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -535,6 +597,12 @@ namespace Beta
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,8 +619,6 @@ namespace Beta
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -578,6 +644,14 @@ namespace Beta
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.PictureBox pictureBox34;
+        private System.Windows.Forms.TextBox textInput;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox33;
+        private System.Windows.Forms.PictureBox pictureBox35;
+        private System.Windows.Forms.PictureBox pictureBox36;
+        private System.Windows.Forms.Label label1;
     }
 }
 

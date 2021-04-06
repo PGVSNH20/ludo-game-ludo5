@@ -20,7 +20,11 @@ namespace GameEngine.Classes
      */
     public class Turn
     {
-        public int PieceID { get; set; }
-        public int Roll { get; set; }
+        public int? PieceID { get; set; } = null;
+        public int? Roll { get; set; } = null;
+        public Turn()
+        {
+
+        }
     }
 }

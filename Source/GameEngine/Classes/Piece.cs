@@ -10,13 +10,15 @@ namespace GameEngine.Classes
         public int PublicID { get; set; }   // Public ID for the player to use when choosing which to move
         public int PlayerID { get; set; }
         public int PiecePosition { get; set; } // -1 nest, -2 goal
+        private static int incrementedId { get; set; } = 0;
 
-        public Piece(int hId, int pubId, int playId)
+        public Piece(int pubId, int playId)
         {
-            HiddenID = hId;
+            HiddenID = incrementedId;
             PublicID = pubId;
             PlayerID = playId;
             PiecePosition = -1;
+            incrementedId++;
         }
     }
 }

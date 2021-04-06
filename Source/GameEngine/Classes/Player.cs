@@ -43,9 +43,20 @@ namespace GameEngine.Classes
             var list = new List<Player>();
             for (int i = 0; i < players; i++)
             {
-                list.Add(new Player(i,"Bob"));
+                Console.WriteLine("Please enter a name:");
+                list.Add(new Player(i,Console.ReadLine()));
             }
             return list;
+
+            /*
+            while (Player[0] == "")
+            {
+                Console.WriteLine("You have to enter a name");
+                Player[0] = Console.ReadLine();
+            }*/
+
+            //Do we need to clear the screen after the player enter the name?
+            //Console.Clear();
         }
     }
 }

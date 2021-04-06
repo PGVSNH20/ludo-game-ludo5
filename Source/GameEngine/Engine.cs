@@ -87,11 +87,6 @@ namespace GameEngine
 			Console.WriteLine("We hope you'll enjoy our game!\nPress Enter to continue...");
 			Console.ReadLine();
 			GameLoop();
-			/*
-			 * How the game should go:
-			 * StartGame() should set up the board based on the GameSettings
-			 * it then calls the GameLoop, where we'll be stuck for the remainder of the game.
-			 */
 		}
 		private void GameLoop()
         {
@@ -151,7 +146,7 @@ namespace GameEngine
 
         private bool CheckIfActivePlayerHasWon()
         {
-			List<Piece> pieces = getActivePlayersPieces();
+			List<Piece> pieces = GetActivePlayersPieces();
 			foreach (Piece p in pieces)
             {
 				if (p.PiecePosition != -2) return false;
@@ -202,7 +197,13 @@ namespace GameEngine
 
         private List<int> ListLegalMoves(int roll)
         {
-            throw new NotImplementedException();
+			List<Piece> pieces = GetActivePlayersPieces();
+			List<int> listOfMoveablesIds = new();
+			foreach (Piece p in pieces)
+            {
+				if (CheckIfPieceCanMove(roll, p)) listOfMoveablesIds.Add(p.HiddenID);
+            }
+			return listOfMoveablesIds;
         }
 
         private bool AreThereLegalMoves(int roll)
@@ -212,7 +213,7 @@ namespace GameEngine
 			 * Is it in nest? If so, is the roll a six?
 			 * Is it in the goal? If so it can't move.
 			 */
-			List<Piece> activePlayerPieces = getActivePlayersPieces();
+			List<Piece> activePlayerPieces = GetActivePlayersPieces();
 			foreach (Piece p in activePlayerPieces)
             {
 				if (CheckIfPieceCanMove(roll, p)) return true;
@@ -228,7 +229,7 @@ namespace GameEngine
 			return false;
 		}
 
-        private List<Piece> getActivePlayersPieces()
+        private List<Piece> GetActivePlayersPieces()
         {
 			List<Piece> activePlayerPieces = new List<Piece>();
 			foreach (Piece p in state.Board.Pieces)
@@ -248,27 +249,42 @@ namespace GameEngine
         }
 		private void ExecuteTurn(Turn currentTurn)
         {
+			// PieceID and Roll are set to null when the Turn-object is first created.
 			if (String.IsNullOrEmpty(Convert.ToString(currentTurn.PieceID))) return;
 			if (String.IsNullOrEmpty(Convert.ToString(currentTurn.Roll))) return;
-			// By having Roll and PieceID be nullable instead of just normal integers, as well as being set to null in the Turn() constructor
-			// These tests can abort the ExecuteTurn method early if either value is unassigned. There may be a better way of doing this, but...
-			// I'm not really up for trying to find a better way right now. It should work at least?
+			/*
+			 * Alright, let's do this again, and better this time.
+			 * The two above just make sure the turn entered is valid, if not, it breaks.
+			 * This is important for turns that may have been stored but not executed, for example due to rolling invalid values.
+			 * Step one - check if the piece is in the nest. If it is, then the roll is a six, and it's simply meant to exit the nest and enter play.
+			 * Step two - check if the piece is in the home stretch.
+			 * Step three - check if it overflows. If it does, it'll need to enter the homestretch, which is the same area for all players.
+			 * Step four - check if it enters the goal, if it does its position should be set to -2.
+			 * Step five - check if the square it enters is safe, and if not, if any other pieces are on it.
+			 *		Any other pieces on the same non-safe square should have their positions set to -1.
+			 */
 			
-			for(int i = 0; i < state.Board.Pieces.Count; i++)
+			if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition == -1)
+			{ 
+				state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = state.Board.StartingPositions[state.ActivePlayer];
+			}
+			else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition > state.Board.HomeStretch.Count - 1)
             {
-				if (state.Board.Pieces[i].HiddenID == currentTurn.PieceID)
-                {
-					// state.Board.StartingPositions[state.ActivePlayer] <- starting position of the current player
-					if (state.Board.Pieces[i].PiecePosition < state.Board.StartingPositions[state.ActivePlayer] 
-						&& state.Board.Pieces[i].PiecePosition + currentTurn.Roll >= state.Board.StartingPositions[state.ActivePlayer])
-                    {
-						int rollOverflow = state.Board.Pieces[i].PiecePosition + (int)currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
-						state.Board.Pieces[i].PiecePosition = state.Board.HomeStretch[rollOverflow].Id;
-						// TODO: finish this code
-
-					}
-                }
-            }
+				if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll == state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
+				else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll < state.Board.HomeStretch.Count + 5) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
+			}
+			else if (state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition < state.Board.StartingPositions[state.ActivePlayer] 
+				&& state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + currentTurn.Roll >= state.Board.StartingPositions[state.ActivePlayer])
+            {
+				int rollOverflow = state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition + (int)currentTurn.Roll - state.Board.StartingPositions[state.ActivePlayer];
+				if (rollOverflow == 6) state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = -2;
+				else state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition = state.Board.HomeStretch[rollOverflow].Id;
+			}
+            else
+            {
+				state.Board.Pieces[(int)currentTurn.PieceID].PiecePosition += (int)currentTurn.Roll;
+			}
+			// TODO: Skriv klart? Är det klart?
         }
 
 		/*

@@ -125,7 +125,7 @@ namespace Beta
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(16, 108);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(78, 82);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -133,9 +133,9 @@ namespace Beta
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(412, 31);
+            this.pictureBox2.Location = new System.Drawing.Point(408, 31);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox2.Size = new System.Drawing.Size(82, 71);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -143,9 +143,9 @@ namespace Beta
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(496, 340);
+            this.pictureBox3.Location = new System.Drawing.Point(496, 329);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox3.Size = new System.Drawing.Size(83, 82);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -156,7 +156,7 @@ namespace Beta
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox4.Location = new System.Drawing.Point(100, 417);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox4.Size = new System.Drawing.Size(82, 81);
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -463,7 +463,7 @@ namespace Beta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 558);
             this.Controls.Add(this.pictureBox34);
             this.Controls.Add(this.pictureBox32);

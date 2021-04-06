@@ -17,14 +17,14 @@ namespace GameEngine.Classes
 
         public Gamestate(GameSettings settings)
         {
-            Board = new Board(settings.Players, settings.BoardSize);
+            Board = new Board(settings.Players.Count, settings.BoardSize);
             Players = Player.GeneratePlayers(settings.Players);
             Turnlist = new List<Turn>();
             Settings = settings;
             ActivePlayer = 0;
             PlayersStillPlaying = GetAllPlayers();
         }
-
+        public Gamestate() { }
 
         public Gamestate AddTurn()
         {

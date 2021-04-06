@@ -16,8 +16,8 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnFourObjects_WhenGivenARollOfSixAtStartOfGame()
         {
-            Engine newEngine = new(new GameSettings(40, 4));
-            var sut = Movement.ListLegalMoves(6, newEngine.State);
+            Gamestate state = new(new GameSettings(4, 40));
+            var sut = Movement.ListLegalMoves(6, state);
             Assert.AreEqual(4, sut.Count);
         }
 

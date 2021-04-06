@@ -22,13 +22,25 @@ namespace Renderer
              */
 
             //While rolling the dice it should 'shuffel' some random numbers for a short while before it shows the real number.
-            List<string> playerNames = new List<string>();
+            var playerNames = new List<string>();
             playerNames.Add("M");
             playerNames.Add("R");
             playerNames.Add("S");
             playerNames.Add("Y");
-            Engine newEngine = new Engine(new GameSettings(playerNames, 44));
-            newEngine.StartGame();
+            var state = new Gamestate(new GameSettings(playerNames, 40));
+            Console.WriteLine("Printing all MainBoard Squares \n###############");
+            foreach(Square s in state.Board.MainBoard)
+            {
+                Console.WriteLine(s.Id);
+            }
+            Console.WriteLine("\nPrinting all HomeStretch Squares \n###############");
+
+            foreach (Square s in state.Board.HomeStretch)
+            {
+                Console.WriteLine(s.Id);
+            }
+            // Engine newEngine = new Engine(new GameSettings(playerNames, 44));
+            // newEngine.StartGame();
         }
     }
 }

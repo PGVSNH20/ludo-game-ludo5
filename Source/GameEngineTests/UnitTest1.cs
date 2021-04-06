@@ -10,7 +10,6 @@ namespace GameEngineTests
         [SetUp]
         public void Setup()
         {
-            Gamestate state = new Gamestate();
         }
 
         [Test]

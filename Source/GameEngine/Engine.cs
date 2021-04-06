@@ -118,15 +118,15 @@ namespace GameEngine
 			switch (piecePosition) // This switch decides how to move the piece forward.
             {
 				case -1:
-					State.Board.Pieces[pieceId].PiecePosition = startPosition;
+					piecePosition = startPosition;
 					break;
 				default :
-					if (piecePosition >= State.Board.MainBoard.Count)
+					if (piecePosition > boardSize) // Is on HomeStretch. Has already checked that it can move.
                     {
-						State.Board.Pieces[pieceId].PiecePosition += roll;
+						piecePosition += roll;
 						break;
 					}
-					if (piecePosition+roll >= boardSize)
+					if (piecePosition + roll >= boardSize) // checks if it should roll over or go to player 1's home stretch
                     {
 						if (startPosition != 0) // If not player one, loop around
 						{
@@ -152,9 +152,9 @@ namespace GameEngine
 			}
 			State.Board.Pieces[pieceId].PiecePosition = piecePosition;
 
+			// TODO: Add logic to check if player pushes away other players' pieces
 
 			Console.WriteLine($"Piece moved to {piecePosition}");
-			// TODO: Skriv klart? Är det klart?
         }
 
         private void PlayerHasFinishedGame(int activePlayer)

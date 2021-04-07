@@ -4,6 +4,7 @@ using System.Threading;
 using GameEngine;
 using GameEngine.Classes;
 
+
 namespace Renderer
 {
     /* Classes in this namespace are used to render the game on screen based on the current game state.

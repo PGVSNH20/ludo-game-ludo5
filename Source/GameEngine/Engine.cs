@@ -140,6 +140,7 @@ namespace GameEngine
 			State.Board.Pieces[pieceId].PiecePosition = piecePosition;
 
 			// TODO: Add logic to check if player pushes away other players' pieces
+			// Check that piecePosition is not -1, -2 or Mainboard.Count or higher
 
 			Console.WriteLine($"Piece moved to {piecePosition}");
         }

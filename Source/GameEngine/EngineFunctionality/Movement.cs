@@ -1,10 +1,6 @@
 ﻿using GameEngine.Classes;
-using GameEngine.EngineFunctionality;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameEngine.EngineFunctionality
 {

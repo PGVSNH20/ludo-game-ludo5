@@ -82,5 +82,11 @@ Svårast tycker jag är att "se" vad som händer i programmet då listBox har ä
 Jag har fått till att man kan skriva sitt namn och lägga i en List, men Listen är inte kopplad till engine klassen ännu så det blir enbart error när man kör det då spelarnamnet är tom.
 
 
+-----------------------------------
 
+2021-04-07 17:45
+Martin Berntson
 
+Vet inte om det blir något mer senare, men idag har jag i alla fall lyckats få spelmotorn att kunna spela ett spel utan spelare (har inte testat att spela manuellt, eller att spela en spelare + AI, men det borde gå snabbt att fixa eftersom i princip all kod för det finns i motorn redan).
+Jag behövde tyvärr skippa den kod jag skrev för att låta andra spelare fortsätta efter att en hade vunnit då jag gjort något fel någonstans i den koden och inte är säker på om det är något jag borde prioritera just nu.
+Att avsluta spelet så fort som en enskild spelare vunnit var lätt och effektivt att implementera, så det är i alla fall bra.

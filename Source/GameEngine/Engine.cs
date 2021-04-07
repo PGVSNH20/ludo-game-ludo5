@@ -28,13 +28,14 @@ namespace GameEngine
 		private void GameLoop()
         {
 			bool gameHasNoWinner = true;
+            List<Player> playerWinOrder = new();
 			while (gameHasNoWinner)
             {
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
 
 				Turn currentTurn = new();
 				Console.WriteLine("Press enter to roll the dice");
-				Console.ReadLine();
+				// Console.ReadLine();
 				currentTurn.Roll = Dice.Roll();
 				Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
 				if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
@@ -53,12 +54,46 @@ namespace GameEngine
 					NextPlayer();
                 }
 				State.Turnlist.Add(currentTurn);
-                if (PlayerFunctions.CheckIfActivePlayerHasWon(State))
+                // PrintPiecePositions();
+                // PrintPlayersStillPlaying();
+                if (State.Players[State.ActivePlayer].Score == 4)
                 {
-                    State.PlayersStillPlaying.RemoveAt(State.ActivePlayer);
-					if (State.PlayersStillPlaying.Count < 2) gameHasNoWinner = false;
+                    playerWinOrder = RemoveActivePlayerFromTheGame(playerWinOrder);
+					// if (State.PlayersStillPlaying.Count < 2) 
+                        gameHasNoWinner = false;
                 }
             }
+            Console.WriteLine($"Player {playerWinOrder[0].Name} won the game!\n~~Congratulations~~");
+        }
+
+        private void PrintPlayersStillPlaying()
+        {
+            foreach(Player p in State.Players)
+            {
+                if (p.Score != 4) Console.WriteLine(p.Id);
+            }
+        }
+
+        private void PrintPiecePositions()
+        {
+            foreach (Piece p in State.Board.Pieces)
+            {
+                Console.WriteLine(p.PiecePosition);
+            }
+        }
+
+        private List<Player> RemoveActivePlayerFromTheGame(List<Player> playerWinOrder)
+        {
+            for (int i = 0; i < State.PlayersStillPlaying.Count; i++)
+            {
+                if (State.PlayersStillPlaying[i].Id == State.ActivePlayer)
+                {
+                    playerWinOrder.Add(State.PlayersStillPlaying[i]);
+                    State.PlayersStillPlaying.RemoveAt(i);
+                    i = State.PlayersStillPlaying.Count;
+                }
+            }
+            return playerWinOrder;
         }
 
         private bool IsTheGameFinished()
@@ -100,17 +135,17 @@ namespace GameEngine
             int pieceId = (int)currentTurn.PieceID;
             int piecePosition = State.Board.Pieces[pieceId].PiecePosition;
             int startPosition = State.Board.StartingPositions[State.ActivePlayer];
-            int boardSize = State.Board.MainBoard.Count - 1; // If the board has 40 squares, then ID 40 is the first square of the home stretch...
+            int boardSize = State.Board.MainBoard.Count; // If the board has 40 squares, then ID 40 is the first square of the home stretch...
 
             piecePosition = PiecePositionCalculator(roll, piecePosition, startPosition, boardSize);
-            if (piecePosition == State.Board.MainBoard.Count + 6) // Checks if the piece is "in the goal", if it is it's set to the true goal value, player gets a point, and checks if player has finished the game.
+            if (piecePosition == State.Board.MainBoard.Count + 5) // Checks if the piece is "in the goal", if it is it's set to the true goal value, player gets a point, and checks if player has finished the game.
             {
                 piecePosition = -2;
                 State.Players[State.ActivePlayer].Score++;
-                if (State.Players[State.ActivePlayer].Score == 4) PlayerHasFinishedGame(State.ActivePlayer);
+                // if (State.Players[State.ActivePlayer].Score == 4) PlayerHasFinishedGame(State.ActivePlayer);
             }
             State.Board.Pieces[pieceId].PiecePosition = piecePosition;
-            if (piecePosition >= 0 && piecePosition <= boardSize) PiecePusher(piecePosition);
+            if (piecePosition >= 0 && piecePosition < boardSize) PiecePusher(piecePosition);
 
             // TODO: Add logic to check if player pushes away other players' pieces
             // Check that piecePosition is not -1, -2 or Mainboard.Count or higher

@@ -10,7 +10,7 @@ namespace GameEngine.EngineFunctionality
 		{
 			try
 			{
-				int input = Convert.ToInt32(Console.ReadLine());
+				int input = legalPieces[0];// Convert.ToInt32(Console.ReadLine());
 				if (legalPieces.Contains(input))
 				{
 					currentTurn.PieceID = input;

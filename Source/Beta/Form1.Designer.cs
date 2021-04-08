@@ -30,7 +30,6 @@ namespace Beta
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -70,6 +69,23 @@ namespace Beta
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -117,16 +133,6 @@ namespace Beta
             this.button1.Text = "Kasta tärningen";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(635, 153);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(145, 274);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -342,11 +348,12 @@ namespace Beta
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox23.Location = new System.Drawing.Point(100, 196);
+            this.pictureBox23.Location = new System.Drawing.Point(100, 197);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(38, 38);
             this.pictureBox23.TabIndex = 26;
             this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
             // 
             // pictureBox24
             // 
@@ -518,12 +525,187 @@ namespace Beta
             this.label1.Text = "ENTER YOUR NAME";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Crimson;
+            this.button3.Location = new System.Drawing.Point(416, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(19, 19);
+            this.button3.TabIndex = 45;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Crimson;
+            this.button4.Location = new System.Drawing.Point(452, 39);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(19, 19);
+            this.button4.TabIndex = 46;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Crimson;
+            this.button5.Location = new System.Drawing.Point(416, 71);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(19, 19);
+            this.button5.TabIndex = 47;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.SpringGreen;
+            this.button7.Location = new System.Drawing.Point(508, 461);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(19, 19);
+            this.button7.TabIndex = 49;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.SpringGreen;
+            this.button8.Location = new System.Drawing.Point(543, 461);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(19, 19);
+            this.button8.TabIndex = 50;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.SpringGreen;
+            this.button9.Location = new System.Drawing.Point(508, 486);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(19, 19);
+            this.button9.TabIndex = 51;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.SpringGreen;
+            this.button10.Location = new System.Drawing.Point(543, 486);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(19, 19);
+            this.button10.TabIndex = 52;
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button11.Location = new System.Drawing.Point(109, 527);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(19, 19);
+            this.button11.TabIndex = 53;
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button12.Location = new System.Drawing.Point(144, 527);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(19, 19);
+            this.button12.TabIndex = 54;
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button13.Location = new System.Drawing.Point(109, 562);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(19, 19);
+            this.button13.TabIndex = 55;
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button14.Location = new System.Drawing.Point(144, 562);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(19, 19);
+            this.button14.TabIndex = 56;
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Khaki;
+            this.button15.Location = new System.Drawing.Point(30, 124);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(19, 19);
+            this.button15.TabIndex = 57;
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.Khaki;
+            this.button16.Location = new System.Drawing.Point(65, 124);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(19, 19);
+            this.button16.TabIndex = 58;
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Crimson;
+            this.button6.Location = new System.Drawing.Point(452, 71);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(19, 19);
+            this.button6.TabIndex = 48;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Khaki;
+            this.button17.Location = new System.Drawing.Point(30, 153);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(19, 19);
+            this.button17.TabIndex = 59;
+            this.button17.UseVisualStyleBackColor = false;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.Khaki;
+            this.button18.Location = new System.Drawing.Point(65, 153);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(19, 19);
+            this.button18.TabIndex = 60;
+            this.button18.UseVisualStyleBackColor = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(635, 153);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(145, 274);
+            this.listBox1.TabIndex = 61;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(809, 723);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox35);
@@ -563,7 +745,6 @@ namespace Beta
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "b";
@@ -611,7 +792,6 @@ namespace Beta
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -652,6 +832,23 @@ namespace Beta
         private System.Windows.Forms.PictureBox pictureBox35;
         private System.Windows.Forms.PictureBox pictureBox36;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

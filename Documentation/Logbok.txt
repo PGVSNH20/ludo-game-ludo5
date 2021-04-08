@@ -5,6 +5,7 @@ Gruppen har provspelat fia-med-knuff online för att vänja sig med reglerna.
 Under diskussion efter fiaspelandet var över så kom Yan in i samtalet.
 Vi har gjort en del planering kring vad vi vill ha i vårat Fia-med-Knuff 100-Person BattleRoyale Auto-Chess
 
+-----------------------------------
 
 2021-03-31, 09:30:
 Martin har ändrat user stories filen, mest lagt till fler.
@@ -36,7 +37,7 @@ Dessutom finnns några ej-implementerade metoder i Engine, behövs nog mer fortf
 Vårt första test är skrivet, en metod som i de flesta fall kommer se ifall vår tärningsmetod Dice.Roll() fungerar korrekt. Det kan finnas sällsynta fall då den ger grönt ljus även när metoden inte egentligen borde ge grönt, men så länge som man inte försökt lägga in något för att lura den så borde det fungera ganska bra.
 Kommentarer i Engine- och Program-klasserna beskriver det planerade flödet för programmet så att vi kan börja lägga in metoder som gör att programmet faktiskt följer den planen vi har.
 
-
+-----------------------------------
 
 2021-04-04 20:30
 Martin Berntson
@@ -49,6 +50,7 @@ Så länge som man har något interface i alla fall.
 Player-klassen vet jag inte riktigt hur jag ska använda mig av just nu, får diskutera det nästa gruppmöte.
 Så i kort gjorde jag lite arbete i 1-2h idag. Fastän planen var 4+.
 
+-----------------------------------
 
 2021-04-05 14:10
 Martin Berntson, Robert von Krusenstjerna
@@ -57,3 +59,34 @@ Stökade om lite i klasserna så att värden som har samma funktion inte exister
 La till flera metoder som inte har logik än, fyllde ut Engine.GameLoop() med logik, finns mycket kvar innan det kan köras dock.
 Kom fram till att vi kan behöva ett "Legal moves"-objekt eller nåt sånt? Osäker.
 Ska fortsätta med mer senare idag.
+
+-----------------------------------
+
+2021-04-06 20:48
+Martin Berntson, Robert von Krusenstjerna, Sanna Edström, Yan Rosén
+
+Vi började dagen med lite grupparbete alla fyra.
+Gjorde en del kodande i spelmotorn, separerade upp koden från Engine.cs i flera klasser då den började bli lite stor.
+Skapade några tester för en metod för att se att den fungerade ordentligt, fler kommer behövas för andra metoder.
+En initiell version av UI för spelet skapades, och diskussion kring ett API för att agera mellan spelmotorn och det program som ska presentera det diskuterades.
+
+Martin och Robert tog lite extra kodande (och diskussion kring koden) på kvällen.
+
+-----------------------------------
+
+2021-04-07 17:05
+Sanna Edström
+
+Har försökt få igång själva spelbanan att fungera, det har varit mycket error och fix hela dagen och har ännu inte lyckas fått till det som jag önskar.
+Svårast tycker jag är att "se" vad som händer i programmet då listBox har ännuen inte lyckats snappat up delar från engine klassen, då mycket inte fungerar har jag valt att raderar delar av det.
+Jag har fått till att man kan skriva sitt namn och lägga i en List, men Listen är inte kopplad till engine klassen ännu så det blir enbart error när man kör det då spelarnamnet är tom.
+
+
+-----------------------------------
+
+2021-04-07 17:45
+Martin Berntson
+
+Vet inte om det blir något mer senare, men idag har jag i alla fall lyckats få spelmotorn att kunna spela ett spel utan spelare (har inte testat att spela manuellt, eller att spela en spelare + AI, men det borde gå snabbt att fixa eftersom i princip all kod för det finns i motorn redan).
+Jag behövde tyvärr skippa den kod jag skrev för att låta andra spelare fortsätta efter att en hade vunnit då jag gjort något fel någonstans i den koden och inte är säker på om det är något jag borde prioritera just nu.
+Att avsluta spelet så fort som en enskild spelare vunnit var lätt och effektivt att implementera, så det är i alla fall bra.

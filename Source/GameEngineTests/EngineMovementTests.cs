@@ -115,11 +115,40 @@ namespace GameEngineTests
             var sut = Movement.ListLegalMoves(2, state);
             Assert.AreEqual(1, sut.Count);
         }
-        /*
-         * Cases to test for ListLegalMoves
-         * No legal moves when all in nest or goal, on any roll but a six
-         * No legal moves if roll is six if all Pieces are on the home stretch.
-         * One legal move if roll of two when two pieces are on the home stretch, but one is at the very end and one is not.
-         */
+
+        [Test]
+        public void CheckIfPieceCanMove_ShouldReturnTrue_GivenARollOfSixAndPieceInNest()
+        {
+            var players = new List<string>();
+            players.Add("M");
+            players.Add("R");
+            players.Add("S");
+            players.Add("Y");
+            var state = new Gamestate(new GameSettings(players, 40));
+            var piece = new Piece(100, 100);
+            piece.PiecePosition = -1;
+
+            var sut = Movement.CheckIfPieceCanMove(6, piece, state);
+            Assert.True(sut);
+        }
+        [Test]
+        public void CheckIfPieceCanMove_ShouldReturnFalse_GivenARollOfFiveAndPieceInNest()
+        {
+            var players = new List<string>();
+            players.Add("M");
+            players.Add("R");
+            players.Add("S");
+            players.Add("Y");
+            var state = new Gamestate(new GameSettings(players, 40));
+            var piece = new Piece(100, 100);
+            piece.PiecePosition = -1;
+
+            var sut = Movement.CheckIfPieceCanMove(5, piece, state);
+            Assert.False(sut);
+        }
+        // CheckIfPieceCanMove is integral to the function of ListLegalMoves which has already been shown to work as expected. As such, making more tests on this method seems redundant.
+        // AreThereLegalMoves also relies on CheckIfPieceCanMove, and any test of that method is essentially also a test of CheckIfPieceCanMove moreso than anything new.
+        // Given this, I should probably have made most tests aimed at CheckIfPieceCanMove() instead, but what's done is done.
+        // CheckIfValidSelection tests the user's input and is therefore difficult if not impossible to test
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GameEngine.Classes;
 using GameEngine.EngineFunctionality;
+using GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -29,6 +30,7 @@ namespace GameEngine
         {
 			bool gameHasNoWinner = true;
             List<Player> playerWinOrder = new();
+            IDice Dice = new Dice();            // TODO: IDice should actually be stored on a player-basis so that you can get the ActivePlayer's Dice (automatic for AI for example)
 			while (gameHasNoWinner)
             {
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
@@ -158,14 +160,14 @@ namespace GameEngine
             // This should only be called if the Piece is still on the main board.
             if (State.Board.MainBoard[piecePosition].Safe) return;                          //escape the method if the square is a safe square.
             List<Piece> piecesOnTheSameSquare = FindPiecesOnSameSquare(piecePosition);      // Finds all pieces that are on the same square
-            piecesOnTheSameSquare = FilterOutActivePlayerPieces(piecesOnTheSameSquare);     // Filters out the active player's own pieces
+            piecesOnTheSameSquare = SelectActivePlayerPieces(piecesOnTheSameSquare);     // Filters out the active player's own pieces
             foreach (Piece p in piecesOnTheSameSquare)                                      // And then moves the remainder, if any, to the nest at -1.
             {
                 p.PiecePosition = -1;
             }
         }
 
-        private List<Piece> FilterOutActivePlayerPieces(List<Piece> piecesOnTheSameSquare)
+        private List<Piece> SelectActivePlayerPieces(List<Piece> piecesOnTheSameSquare)
         {
             List<Piece> pieceList = new();
             foreach(Piece p in piecesOnTheSameSquare)

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using GameEngine;
 using GameEngine.Classes;
 using System.Collections.Generic;
+using GameEngine.Interfaces;
 
 namespace GameEngineTests
 {
@@ -16,9 +17,10 @@ namespace GameEngineTests
         public void Dice_Should_Be_SixSided()           // Warning! This test may, extremely rarely, give a false positive even if the dice function is broken.
         {
             bool NoRollOverSixOrBelowOne = true;
+            IDice dice = new Dice();
             for(int i = 0; i < 1000; i++)
             {
-                int roll = Dice.Roll();
+                int roll = dice.Roll();
                 if (!(roll >= 1 && roll <= 6))
                 {
                     NoRollOverSixOrBelowOne = false;

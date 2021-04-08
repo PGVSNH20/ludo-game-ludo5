@@ -21,7 +21,7 @@ namespace Beta
         [System.Runtime.InteropServices.DllImport("kernel32.dll")]
         private static extern bool AllocConsole();
 
-        //Kasta tärningen
+        
 
         public void LanchGame()
         {
@@ -39,9 +39,10 @@ namespace Beta
 
             newEngine.StartGame();
         }
+        //Kasta tärningen
         public void button1_Click(object sender, EventArgs e)
         {
-            LanchGame();
+            
 
         }
 
@@ -121,6 +122,12 @@ namespace Beta
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        //Starta spelet
+        private void button19_Click(object sender, EventArgs e)
+        {
+            LanchGame();
         }
     }
 }

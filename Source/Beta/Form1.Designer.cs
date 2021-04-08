@@ -86,6 +86,7 @@ namespace Beta
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button19 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -126,7 +127,7 @@ namespace Beta
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(635, 433);
+            this.button1.Location = new System.Drawing.Point(635, 463);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 27);
             this.button1.TabIndex = 0;
@@ -677,11 +678,21 @@ namespace Beta
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(635, 153);
+            this.listBox1.Location = new System.Drawing.Point(635, 183);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(145, 274);
             this.listBox1.TabIndex = 61;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(635, 153);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(145, 27);
+            this.button19.TabIndex = 62;
+            this.button19.Text = "Starta Spel";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // Form1
             // 
@@ -689,6 +700,7 @@ namespace Beta
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(809, 723);
+            this.Controls.Add(this.button19);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -849,6 +861,7 @@ namespace Beta
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button19;
     }
 }
 

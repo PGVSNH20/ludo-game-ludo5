@@ -5,23 +5,41 @@ using System.Threading;
 using System.Windows.Forms;
 using GameEngine;
 using GameEngine.Classes;
+using GameEngine.Constants;
+using GameEngine.Enumerations;
+using GameEngine.Interfaces;
 
 namespace Beta
 {
     public partial class Form1 : Form
     {
-        public readonly object count;
 
-        public Form1()
+        private List<Player> players;
+        private IList<PictureBox> tokens;
+        private IList<Board> playground;
+        private int turn;
+        private IDice Dice;
+        private Random rnd;
+        private IList<Board> redFinish;
+        private IList<Board> blueFinish;
+        private IList<Board> yellowFinish;
+        private IList<Board> greenFinish;
+
+
+        public Form1(Dictionary<ColorType, string> e)
         {
             AllocConsole();
             InitializeComponent();
+            this.players = new List<Player>();
+
+
+
         }
 
         [System.Runtime.InteropServices.DllImport("kernel32.dll")]
         private static extern bool AllocConsole();
 
-        
+
 
         public void LanchGame()
         {
@@ -39,6 +57,8 @@ namespace Beta
 
             newEngine.StartGame();
         }
+
+
         //Kasta tärningen
         public void button1_Click(object sender, EventArgs e)
         {

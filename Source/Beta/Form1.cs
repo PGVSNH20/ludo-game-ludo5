@@ -22,9 +22,9 @@ namespace Beta
         private static extern bool AllocConsole();
 
         //Kasta tärningen
-        public void button1_Click(object sender, EventArgs e)
-        {
 
+        public void LanchGame()
+        {
             var playerNames = new List<string>();
             playerNames.Add("M");
             playerNames.Add("R");
@@ -38,6 +38,10 @@ namespace Beta
             }
 
             newEngine.StartGame();
+        }
+        public void button1_Click(object sender, EventArgs e)
+        {
+            LanchGame();
 
         }
 

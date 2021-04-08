@@ -23,15 +23,16 @@ namespace GameEngineTests
             players.Add("S");
             players.Add("Y");
             var state = new Gamestate(new GameSettings(players, 40));
-            
-            foreach(Player p in state.Players)
+
+            for (int x = 0; x < state.Players.Count; x++)
             {
-                p.FinishedOrQuitTheGame = true;
+                state.Players[x].FinishedOrQuitTheGame = true;
             }
+            
 
             var sut = state.Board.Pieces;
 
-            Assert.IsTrue(sut.Count == 0);
+            Assert.AreEqual(sut.Count == 0);
             
 
 

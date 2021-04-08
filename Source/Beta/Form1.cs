@@ -20,6 +20,21 @@ namespace Beta
         //Kasta tärningen
         public void button1_Click(object sender, EventArgs e)
         {
+
+            var playerNames = new List<string>();
+            playerNames.Add("M");
+            playerNames.Add("R");
+            playerNames.Add("S");
+            playerNames.Add("Y");
+            Engine newEngine = new Engine(new GameSettings(playerNames, 32));
+
+            foreach (var player in playerNames)
+            {
+                listBox1.Items.Add(player);
+            }
+
+            newEngine.StartGame();
+
             
         }
 
@@ -42,10 +57,16 @@ namespace Beta
         private void button2_Click(object sender, EventArgs e)
         {
             var playerNames = new List<string>();
-            playerNames.Add(textInput.Text);
-            listBox1.Items.Add(textInput.Text);
-            textInput.Clear();
+            playerNames.Add("M");
+            playerNames.Add("R");
+            playerNames.Add("S");
+            playerNames.Add("Y");
+            Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
+            foreach (var player in playerNames)
+            {
+                listBox1.Items.Add(player);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

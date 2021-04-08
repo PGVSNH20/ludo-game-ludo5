@@ -26,12 +26,11 @@ namespace Beta
         private IList<Board> greenFinish;
 
 
-        public Form1(Dictionary<ColorType, string> e)
+        public Form1()
         {
             AllocConsole();
             InitializeComponent();
             this.players = new List<Player>();
-
 
 
         }

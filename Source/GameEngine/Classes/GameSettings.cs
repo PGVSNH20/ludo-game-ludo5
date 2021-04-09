@@ -15,7 +15,7 @@ namespace GameEngine.Classes
         public GameSettings(List<PlayerSetting> players, int boardSize)
         {
             Players = players;
-            BoardSize = boardSize;
+            BoardSize = 10*(Players.Count);
         }
     }
 }

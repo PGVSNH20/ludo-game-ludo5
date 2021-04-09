@@ -57,7 +57,7 @@ namespace GameEngine.Classes
         private List<int> generateStartPosistions(int players, int Boardsize)
         {
             List<int> startPositions = new List<int>();
-            for (int i = 0; i < Boardsize; i+=10)
+            for (int i = 0; i < Boardsize; i+=(Boardsize/players))
             {
                 startPositions.Add(i);
             }

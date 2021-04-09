@@ -30,6 +30,7 @@ namespace GameEngine.Classes
                     pieces.Add(new Piece(k, j));
                 }
             }
+            incrementedId = 0;
             return pieces;
         }
     }

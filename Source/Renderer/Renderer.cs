@@ -17,10 +17,10 @@ namespace Renderer
         public ConsoleRenderer Setup()
         {
             Console.WriteLine("Please enter how many players would like to play.");
-            var roll = new Random();
-            int players = roll.Next(1, 101); //Convert.ToInt32(Console.ReadLine());
+            //var roll = new Random();
+            int players = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("How many of those are going to be AI-players?");
-            int ai = players; // Convert.ToInt32(Console.ReadLine());
+            int ai = Convert.ToInt32(Console.ReadLine());
             if (ai <= players)
             {
                 List<PlayerSetting> playerList = new();

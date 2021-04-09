@@ -22,6 +22,7 @@ namespace Renderer
              */
             var renderer = new ConsoleRenderer();
             renderer.Setup().Start();
+            Thread.Sleep(100);
             var renderer2 = new ConsoleRenderer();
             renderer2.Setup().Start();
         }

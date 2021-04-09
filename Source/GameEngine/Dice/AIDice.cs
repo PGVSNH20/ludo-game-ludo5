@@ -3,7 +3,7 @@ using GameEngine.Interfaces;
 
 namespace GameEngine
 {
-    public class Dice : IDice
+    public class AIDice : IDice
     {
         public int Roll()
         {

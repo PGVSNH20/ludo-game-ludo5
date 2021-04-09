@@ -17,7 +17,7 @@ namespace GameEngineTests
         public void Dice_Should_Be_SixSided()           // Warning! This test may, extremely rarely, give a false positive even if the dice function is broken.
         {
             bool NoRollOverSixOrBelowOne = true;
-            IDice dice = new Dice();
+            IDice dice = new AIDice();
             for(int i = 0; i < 1000; i++)
             {
                 int roll = dice.Roll();

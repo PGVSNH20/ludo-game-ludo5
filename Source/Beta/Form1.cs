@@ -14,7 +14,7 @@ namespace Beta
     public partial class Form1 : Form
     {
 
-        private List<Player> players;
+       /* private List<Player> players;
         private IList<PictureBox> tokens;
         private IList<Board> playground;
         private int turn;
@@ -24,13 +24,13 @@ namespace Beta
         private IList<Board> blueFinish;
         private IList<Board> yellowFinish;
         private IList<Board> greenFinish;
-
+       */
 
         public Form1()
         {
             AllocConsole();
             InitializeComponent();
-            this.players = new List<Player>();
+            //this.players = new List<Player>();
 
 
         }
@@ -43,10 +43,11 @@ namespace Beta
         public void LanchGame()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
             foreach (var player in playerNames)
@@ -91,10 +92,11 @@ namespace Beta
             else
             {
                 var playerNames = new List<PlayerSetting>();
-                playerNames.Add(new("M", new AIDice()));
-                playerNames.Add(new("R", new AIDice()));
-                playerNames.Add(new("S", new AIDice()));
-                playerNames.Add(new("Y", new AIDice()));
+                playerNames.Add(new("M", new Dice()));
+                playerNames.Add(new("R", new Dice()));
+                playerNames.Add(new("S", new Dice()));
+                playerNames.Add(new("Y", new Dice()));
+                playerNames.Add(new(textInput.Text, new Dice()));
                 Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
                 foreach (var player in playerNames)

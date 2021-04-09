@@ -106,3 +106,12 @@ Fixade så att två instanser av spelet kan köra samtidigt utan de IndexOutOfBo
 (Så går det när man gör en statisk incrementer utan att nollställa den efter setup...)
 
 -----------------------------------
+
+2021-04-09 16:15
+Sanna Edström
+
+Har påbörjat med Case Diagramet och fortsatt försöka luska ut hur man ska få form att fungera tillsammans med spelmotorn. 
+Har varit mest ute på internet och googlat hur man ska få det att fungera och tittat på andra koder där folk har användt Form som UI i andra brädspel's program.
+Som det ser ut nu så ser det lite mörkt ut med att få det att fungera som det ska, men kommer att fortsätta och hoppas att få till det. 
+Alltenativet att rita ut en UI i själva konsol applikationen, men det får vi se senare.
+

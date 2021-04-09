@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine", "GameEngine\Ga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngineTests", "GameEngineTests\GameEngineTests.csproj", "{F2392B7D-D250-43DB-97FC-442CA4EA0177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beta", "Beta\Beta.csproj", "{D9F5E673-8530-4C70-88EE-58A8CD8C0458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beta", "Beta\Beta.csproj", "{D9F5E673-8530-4C70-88EE-58A8CD8C0458}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9B1511E-482C-40B9-8E3B-85A41233D169} = {E9B1511E-482C-40B9-8E3B-85A41233D169}
 	EndProjectSection

@@ -23,14 +23,14 @@ namespace GameEngine
                 Console.WriteLine($"     {player.Name}");
 			}
 			Console.WriteLine("We hope you'll enjoy our game!\nPress Enter to continue...");
-			Console.ReadLine();
+			// Console.ReadLine();
 			GameLoop();
 		}
 		private void GameLoop()
         {
 			bool gameHasNoWinner = true;
             List<Player> playerWinOrder = new();
-            IDice Dice = new Dice();            // TODO: IDice should actually be stored on a player-basis so that you can get the ActivePlayer's Dice (automatic for AI for example)
+            // IDice Dice = new Dice();            // TODO: IDice should actually be stored on a player-basis so that you can get the ActivePlayer's Dice (automatic for AI for example)
 			while (gameHasNoWinner)
             {
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
@@ -38,7 +38,7 @@ namespace GameEngine
 				Turn currentTurn = new();
 				Console.WriteLine("Press enter to roll the dice");
 				// Console.ReadLine();
-				currentTurn.Roll = Dice.Roll();
+				currentTurn.Roll = State.Players[State.ActivePlayer].Dice.Roll();
 				Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
 				if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
                 {

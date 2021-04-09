@@ -9,6 +9,6 @@ namespace GameEngine.Interfaces
 {
     public interface ISelector
     {
-        Turn Selector(Turn currentTurn, List<int> selectionList);
+        Turn Selector(Gamestate state, Turn currentTurn, List<int> selectionList);
     }
 }

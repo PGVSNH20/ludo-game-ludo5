@@ -11,11 +11,13 @@ namespace GameEngine.Selectors
     public class AISelector : ISelector
     {
 
-        public Turn Selector(Turn currentTurn, List<int> selectionList)
+        public Turn Selector(Gamestate state,Turn currentTurn, List<int> selectionList)
         {
             currentTurn.PieceID = selectionList[0];
 
-            
+            //if currentturn.roll == 6
+            //if piece postion == -1.
+
 
             return currentTurn;
         }
@@ -27,7 +29,6 @@ namespace GameEngine.Selectors
 
             if (!board.MainBoard[LandingSpot].Safe)
             {
-                
                 foreach (Piece item in board.Pieces)
                 {
                     if (LandingSpot == item.PiecePosition && item.PlayerID != board.Pieces[pieceId].PlayerID)
@@ -41,6 +42,16 @@ namespace GameEngine.Selectors
         return false; 
 
         }
+
+        public bool LeaveNest(int pieceId, Turn currentturn, Board board)
+        {
+            
+
+
+            return false;
+
+        }
+
 
 
 

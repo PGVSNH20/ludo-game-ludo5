@@ -19,10 +19,10 @@ namespace GameEngineTests
         public void NoActivePlayersNoActivePieces()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
-            playerNames.Add(new("S", new Dice()));
-            playerNames.Add(new("Y", new Dice()));
+            playerNames.Add(new("M", new AIDice()));
+            playerNames.Add(new("R", new AIDice()));
+            playerNames.Add(new("S", new AIDice()));
+            playerNames.Add(new("Y", new AIDice()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
 
             for (int x = 0; x < state.Players.Count; x++)

@@ -42,11 +42,12 @@ namespace Beta
 
         public void LanchGame()
         {
+
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
-            playerNames.Add(new("S", new Dice()));
-            playerNames.Add(new("Y", new Dice()));
+            playerNames.Add(new("M", new AIDice()));
+            playerNames.Add(new("R", new AIDice()));
+            playerNames.Add(new("S", new AIDice()));
+            playerNames.Add(new("Y", new AIDice()));
 
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
@@ -92,11 +93,11 @@ namespace Beta
             else
             {
                 var playerNames = new List<PlayerSetting>();
-                playerNames.Add(new("M", new Dice()));
-                playerNames.Add(new("R", new Dice()));
-                playerNames.Add(new("S", new Dice()));
-                playerNames.Add(new("Y", new Dice()));
-                playerNames.Add(new(textInput.Text, new Dice()));
+                playerNames.Add(new("M", new AIDice()));
+                playerNames.Add(new("R", new AIDice()));
+                playerNames.Add(new("S", new AIDice()));
+                playerNames.Add(new("Y", new AIDice()));
+                playerNames.Add(new(textInput.Text, new AIDice()));
                 Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
                 foreach (var player in playerNames)

@@ -33,8 +33,8 @@ namespace GameEngineTests
         {
 
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("M", new AIDice()));
+            playerNames.Add(new("R", new AIDice()));
             var sut = new Gamestate(new GameSettings(playerNames, 40));
             Assert.AreEqual(sut.Turnlist.Count, 0);
         }
@@ -44,8 +44,8 @@ namespace GameEngineTests
 
 
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("M", new AIDice()));
+            playerNames.Add(new("R", new AIDice()));
             var sut = new Gamestate(new GameSettings(playerNames, 40));
             sut.AddTurn();
             Assert.AreEqual(sut.Turnlist.Count, 1);

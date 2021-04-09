@@ -90,16 +90,15 @@ namespace Beta
             }
             else
             {
-                var playerNames = new List<string>();
+                var playerNames = new List<string>(); 
                 playerNames.Add(textInput.Text);
-                Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
                 foreach (var player in playerNames)
                 {
                     listBox1.Items.Add(player);
                 }
             }
-
+        }
             private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

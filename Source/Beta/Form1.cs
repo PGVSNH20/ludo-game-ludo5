@@ -43,6 +43,7 @@ namespace Beta
 
         public void LanchGame()
         {
+
             var playerNames = new List<PlayerSetting>();
             playerNames.Add(new("M", new AIDice(), new AISelector()));
             playerNames.Add(new("R", new AIDice(), new AISelector()));
@@ -159,6 +160,11 @@ namespace Beta
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox31_Click(object sender, EventArgs e)
         {
 
         }

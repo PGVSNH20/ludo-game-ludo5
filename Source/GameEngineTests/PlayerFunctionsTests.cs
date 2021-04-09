@@ -15,14 +15,15 @@ namespace GameEngineTests
     {
 
         [Test]
+        
         public void NoActivePlayersNoActivePieces()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new AIDice()));
+            playerNames.Add(new("R", new AIDice()));
+            playerNames.Add(new("S", new AIDice()));
+            playerNames.Add(new("Y", new AIDice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
 
             for (int x = 0; x < state.Players.Count; x++)
             {

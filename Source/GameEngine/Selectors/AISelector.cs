@@ -10,7 +10,6 @@ namespace GameEngine.Selectors
 {
     public class AISelector : ISelector
     {
-
         public Turn Selector(Turn currentTurn, List<int> selectionList)
         {
             currentTurn.PieceID = selectionList[0];

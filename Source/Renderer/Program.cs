@@ -23,8 +23,8 @@ namespace Renderer
             playerNames.Add("R");
             playerNames.Add("S");
             playerNames.Add("Y");
-            Engine newEngine = new Engine(new GameSettings(playerNames, 44));
-             newEngine.StartGame();
+            Engine newEngine = new Engine(new GameSettings(playerNames));
+            newEngine.StartGame();
         }
     }
 }

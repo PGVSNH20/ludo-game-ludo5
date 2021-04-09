@@ -12,10 +12,10 @@ namespace GameEngine.Classes
         public List<string> Players { get; set; }
         public int BoardSize { get; set; }
         //choose how many players and they write in their names
-        public GameSettings(List<string> players, int boardSize)
+        public GameSettings(List<string> players)
         {
             Players = players;
-            BoardSize = boardSize;
+            BoardSize = 10*(Players.Count);
         }
     }
 }

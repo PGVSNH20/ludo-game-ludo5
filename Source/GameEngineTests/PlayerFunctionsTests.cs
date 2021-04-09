@@ -32,7 +32,7 @@ namespace GameEngineTests
 
             var sut = state.Board.Pieces;
 
-            Assert.AreEqual(sut.Count == 0);
+            Assert.AreEqual(sut.Count,0);
             
 
 

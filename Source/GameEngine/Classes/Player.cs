@@ -38,13 +38,6 @@ namespace GameEngine.Classes
             Score = 0;
         }
 
-        public Player(int id, String name, int score)
-        {
-            Id = id;
-            Name = name;
-            Score = score;  
-        }
-
         public static List<Player> GeneratePlayers(List<PlayerSetting> players)
         {
             var list = new List<Player>();

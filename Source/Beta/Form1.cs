@@ -83,22 +83,24 @@ namespace Beta
         //Registera namn
         private void button2_Click(object sender, EventArgs e)
         {
-            var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
-            playerNames.Add(new("S", new Dice()));
-            playerNames.Add(new("Y", new Dice()));
-            Engine newEngine = new Engine(new GameSettings(playerNames, 32));
-
-            foreach (var player in playerNames)
+            if (string.IsNullOrEmpty(textInput.Text) || string.IsNullOrWhiteSpace(textInput.Text))
             {
-                listBox1.Items.Add(player);
+
+                listBox1.Items.Add("Skriv in ett giltigt namn");
+            }
+            else
+            {
+                var playerNames = new List<string>();
+                playerNames.Add(textInput.Text);
+                Engine newEngine = new Engine(new GameSettings(playerNames, 32));
+
+                foreach (var player in playerNames)
+                {
+                    listBox1.Items.Add(player);
+                }
             }
 
-            newEngine.StartGame();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+            private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

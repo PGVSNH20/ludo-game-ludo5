@@ -16,6 +16,7 @@ namespace GameEngine.Classes
         public int Score { get; set; }
         public bool FinishedOrQuitTheGame { get; set; }
         public IDice Dice { get; set; }
+        public ISelector Selector { get; set; }
         
         public Player(int id, String name, IDice dice)
         {
@@ -36,6 +37,7 @@ namespace GameEngine.Classes
             Name = playerSetting.Name;
             Dice = playerSetting.Dice;
             Score = 0;
+            Selector = playerSetting.Selector;
         }
 
         public static List<Player> GeneratePlayers(List<PlayerSetting> players)

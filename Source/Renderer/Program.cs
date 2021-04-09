@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using GameEngine;
 using GameEngine.Classes;
+using GameEngine.Selectors;
+using GameEngine.Dice;
 
 
 namespace Renderer
@@ -20,10 +22,10 @@ namespace Renderer
              */
 
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new ConsoleDice(), new ConsoleSelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
             newEngine.StartGame();
         }

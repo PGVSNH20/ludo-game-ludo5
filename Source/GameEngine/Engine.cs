@@ -36,16 +36,20 @@ namespace GameEngine
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
 
 				Turn currentTurn = new();
-				Console.WriteLine("Press enter to roll the dice");
 				// Console.ReadLine();
 				currentTurn.Roll = State.Players[State.ActivePlayer].Dice.Roll();
 				Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
 				if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
                 {
-                    List<int> legalPieces = Movement.ListLegalMoves((int)currentTurn.Roll, State);  // Kommer behöva nån typ av objekt
-                    Movement.PrintLegalMoves(legalPieces);
-                    currentTurn = Movement.CheckIfValidSelection(currentTurn, legalPieces); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet av en stack overflow?
-                                                                                   // Här sätts Turn.PieceID
+                    //List<int> legalPieces = Movement.ListLegalMoves((int)currentTurn.Roll, State);  // Kommer behöva nån typ av objekt
+                    //Movement.PrintLegalMoves(legalPieces);
+                    //currentTurn = Movement.CheckIfValidSelection(currentTurn, legalPieces); // rekursiv algoritm, antingen gör spelaren rätt eller så krashar spelet av en stack overflow?
+                    // Här sätts Turn.PieceID
+                    currentTurn = State.Players[State.ActivePlayer].Selector
+                                                                        .Selector(
+                                                                            currentTurn, Movement.ListLegalMoves(
+                                                                                (int)currentTurn.Roll, State
+                                                                                ));
                     ExecuteTurn(currentTurn);
                     NextPlayer();
                     gameHasNoWinner = IsTheGameFinished();

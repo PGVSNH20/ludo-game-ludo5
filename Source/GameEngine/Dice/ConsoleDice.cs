@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameEngine.Dice
 {
-    class ConsoleDice : IDice
+    public class ConsoleDice : IDice
     {
         public int Roll()
         {

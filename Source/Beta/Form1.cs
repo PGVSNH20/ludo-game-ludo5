@@ -8,6 +8,7 @@ using GameEngine.Classes;
 using GameEngine.Constants;
 using GameEngine.Enumerations;
 using GameEngine.Interfaces;
+using GameEngine.Selectors;
 
 namespace Beta
 {
@@ -43,10 +44,10 @@ namespace Beta
         public void LanchGame()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new Dice()));
-            playerNames.Add(new("R", new Dice()));
-            playerNames.Add(new("S", new Dice()));
-            playerNames.Add(new("Y", new Dice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
 
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
@@ -92,11 +93,11 @@ namespace Beta
             else
             {
                 var playerNames = new List<PlayerSetting>();
-                playerNames.Add(new("M", new Dice()));
-                playerNames.Add(new("R", new Dice()));
-                playerNames.Add(new("S", new Dice()));
-                playerNames.Add(new("Y", new Dice()));
-                playerNames.Add(new(textInput.Text, new Dice()));
+                playerNames.Add(new("M", new AIDice(), new AISelector()));
+                playerNames.Add(new("R", new AIDice(), new AISelector()));
+                playerNames.Add(new("S", new AIDice(), new AISelector()));
+                playerNames.Add(new("Y", new AIDice(), new AISelector()));
+                playerNames.Add(new(textInput.Text, new AIDice(), new AISelector()));
                 Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
                 foreach (var player in playerNames)

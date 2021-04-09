@@ -12,10 +12,12 @@ namespace GameEngine.Classes
     {
         public string Name { get; set; }
         public IDice Dice { get; set; }
-        public PlayerSetting (string name, IDice dice)
+        public ISelector Selector { get; set; }
+        public PlayerSetting (string name, IDice dice, ISelector selector)
         {
             Name = name;
             Dice = dice;
+            Selector = selector;
         }
     }
 }

@@ -35,8 +35,6 @@ namespace GameEngine.Classes
 
         }
 
-
-
         //variable size
         public Board(int players)
         {
@@ -66,9 +64,5 @@ namespace GameEngine.Classes
 
         }
 
-        public void createPieces()
-        {
-
-        }
     }
 }

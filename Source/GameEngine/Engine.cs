@@ -28,10 +28,10 @@ namespace GameEngine
 		}
 		private void GameLoop()
         {
-			bool gameHasNoWinner = true;
+			State.GameHasNoWinner = true;
             List<Player> playerWinOrder = new();
             
-            while (gameHasNoWinner)
+            while (State.GameHasNoWinner)
             {
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
 
@@ -49,7 +49,7 @@ namespace GameEngine
                                                                                 ));
                     ExecuteTurn(currentTurn);
                     NextPlayer();
-                    gameHasNoWinner = IsTheGameFinished();
+                    // gameHasNoWinner = IsTheGameFinished();
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace GameEngine
                 {
                     playerWinOrder = RemoveActivePlayerFromTheGame(playerWinOrder);
 					
-                    gameHasNoWinner = false;
+                    State.GameHasNoWinner = false;
                 }
             }
             Console.WriteLine($"Player {playerWinOrder[0].Name} won the game!\n~~Congratulations~~");

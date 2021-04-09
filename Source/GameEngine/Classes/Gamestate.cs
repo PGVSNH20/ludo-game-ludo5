@@ -14,6 +14,7 @@ namespace GameEngine.Classes
         public List<Turn> Turnlist { get; set; }
         public int ActivePlayer { get; set; }
         public List<Player> PlayersStillPlaying { get; set; }
+        public bool GameHasNoWinner { get; set; }
 
         public Gamestate(GameSettings settings)
         {

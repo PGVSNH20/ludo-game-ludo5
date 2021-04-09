@@ -20,14 +20,10 @@ namespace Renderer
             /*
              * TODO: IMPORTANT! Commented out ReadLine-calls in Movement and Engine for testing purposes - reimplement them later!
              */
-
-            var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new ConsoleDice(), new ConsoleSelector()));
-            playerNames.Add(new("R", new AIDice(), new AISelector()));
-            playerNames.Add(new("S", new AIDice(), new AISelector()));
-            playerNames.Add(new("Y", new AIDice(), new AISelector()));
-            Engine newEngine = new Engine(new GameSettings(playerNames, 32));
-            newEngine.StartGame();
+            var renderer = new ConsoleRenderer();
+            renderer.Setup().Start();
+            var renderer2 = new ConsoleRenderer();
+            renderer2.Setup().Start();
         }
     }
 }

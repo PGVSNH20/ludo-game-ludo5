@@ -12,13 +12,13 @@ namespace GameEngine.Classes
         public List<PlayerSetting> Players { get; set; }
         public int BoardSize { get; set; }
         //choose how many players and they write in their names
-        public GameSettings(List<PlayerSetting> players, int boardSize)
+        public GameSettings(List<PlayerSetting> players)
         {
             Players = players;
-            BoardSize = 10*(Players.Count);
+            BoardSize = 10 * (Players.Count);
         }
 
-        public GameSettings(List<string> players, int Boardsize)
+        public GameSettings(List<PlayerSetting> players, int Boardsize)
         {
             Players = players;
             BoardSize = BoardSize;

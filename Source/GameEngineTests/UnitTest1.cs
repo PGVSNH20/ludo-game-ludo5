@@ -3,6 +3,7 @@ using GameEngine;
 using GameEngine.Classes;
 using System.Collections.Generic;
 using GameEngine.Interfaces;
+using GameEngine.Selectors;
 
 namespace GameEngineTests
 {
@@ -16,11 +17,11 @@ namespace GameEngineTests
         [Test]
         public void Dice_Should_Be_SixSided()           // Warning! This test may, extremely rarely, give a false positive even if the dice function is broken.
         {
-            bool NoRollOverSixOrBelowOne = true;
-            IDice dice = new AIDice();
+            var NoRollOverSixOrBelowOne = true;
+            IDice sut = new AIDice();
             for(int i = 0; i < 1000; i++)
             {
-                int roll = dice.Roll();
+                int roll = sut.Roll();
                 if (!(roll >= 1 && roll <= 6))
                 {
                     NoRollOverSixOrBelowOne = false;
@@ -33,10 +34,10 @@ namespace GameEngineTests
         {
 
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
             var sut = new Gamestate(new GameSettings(playerNames, 40));
-            Assert.AreEqual(sut.Turnlist.Count, 0);
+            Assert.AreEqual(0, sut.Turnlist.Count);
         }
         [Test]
         public void AddTurnMethod_ShouldAddANewTurnToList()
@@ -44,11 +45,11 @@ namespace GameEngineTests
 
 
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
             var sut = new Gamestate(new GameSettings(playerNames, 40));
             sut.AddTurn();
-            Assert.AreEqual(sut.Turnlist.Count, 1);
+            Assert.AreEqual(1, sut.Turnlist.Count);
         }
 
 

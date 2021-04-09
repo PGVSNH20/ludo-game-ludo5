@@ -8,6 +8,7 @@ using GameEngine;
 using GameEngine.Classes;
 using GameEngine.EngineFunctionality;
 using System.Collections.Generic;
+using GameEngine.Selectors;
 
 namespace GameEngineTests
 {
@@ -19,10 +20,10 @@ namespace GameEngineTests
         public void NoActivePlayersNoActivePieces()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
 
             for (int x = 0; x < state.Players.Count; x++)

@@ -42,11 +42,11 @@ namespace Beta
 
         public void LanchGame()
         {
-            var playerNames = new List<string>();
-            playerNames.Add("M");
-            playerNames.Add("R");
-            playerNames.Add("S");
-            playerNames.Add("Y");
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
             foreach (var player in playerNames)
@@ -83,11 +83,11 @@ namespace Beta
         //Registera namn
         private void button2_Click(object sender, EventArgs e)
         {
-            var playerNames = new List<string>();
-            playerNames.Add("M");
-            playerNames.Add("R");
-            playerNames.Add("S");
-            playerNames.Add("Y");
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
             Engine newEngine = new Engine(new GameSettings(playerNames, 32));
 
             foreach (var player in playerNames)
@@ -147,6 +147,11 @@ namespace Beta
         private void button19_Click(object sender, EventArgs e)
         {
             LanchGame();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

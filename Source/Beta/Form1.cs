@@ -159,5 +159,10 @@ namespace Beta
         {
 
         }
+
+        private void pictureBox31_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,12 +17,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnFourObjects_WhenGivenARollOfSixAtStartOfGame()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
 
             var sut = Movement.ListLegalMoves(6, state);
             Assert.AreEqual(4, sut.Count);
@@ -31,12 +31,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfFiveWithOnePieceInPlay()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 0;
 
             var sut = Movement.ListLegalMoves(5, state);
@@ -45,12 +45,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfOneAtStartOfGame()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
 
             var sut = Movement.ListLegalMoves(1, state);
             Assert.AreEqual(0, sut.Count);
@@ -58,12 +58,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfOneWithASinglePieceAtTheEndOfTheHomeStretch()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 44;
 
             var sut = Movement.ListLegalMoves(1, state);
@@ -72,12 +72,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfTwoWithASinglePieceAtTheEndOfTheHomeStretch()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 44;
 
             var sut = Movement.ListLegalMoves(2, state);
@@ -86,12 +86,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfSixWithAllPiecesOnTheHomeStretch()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 40;
             state.Board.Pieces[1].PiecePosition = 41;
             state.Board.Pieces[2].PiecePosition = 42;
@@ -103,12 +103,12 @@ namespace GameEngineTests
         [Test]
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfTwoWithOnePieceRightNextToTheGoalAndAnotherFurtherBackOnTheHomeStretch()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 40;
             state.Board.Pieces[3].PiecePosition = 44;
 
@@ -119,12 +119,12 @@ namespace GameEngineTests
         [Test]
         public void CheckIfPieceCanMove_ShouldReturnTrue_GivenARollOfSixAndPieceInNest()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
             var piece = new Piece(100, 100);
             piece.PiecePosition = -1;
 
@@ -134,12 +134,13 @@ namespace GameEngineTests
         [Test]
         public void CheckIfPieceCanMove_ShouldReturnFalse_GivenARollOfFiveAndPieceInNest()
         {
-            var players = new List<string>();
-            players.Add("M");
-            players.Add("R");
-            players.Add("S");
-            players.Add("Y");
-            var state = new Gamestate(new GameSettings(players, 40));
+            var playerNames = new List<PlayerSetting>();
+            playerNames.Add(new("M", new Dice()));
+            playerNames.Add(new("R", new Dice()));
+            playerNames.Add(new("S", new Dice()));
+            playerNames.Add(new("Y", new Dice()));
+            var state = new Gamestate(new GameSettings(playerNames, 40));
+
             var piece = new Piece(100, 100);
             piece.PiecePosition = -1;
 

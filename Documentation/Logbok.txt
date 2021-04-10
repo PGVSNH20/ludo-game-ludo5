@@ -115,3 +115,10 @@ Har varit mest ute på internet och googlat hur man ska få det att fungera och 
 Som det ser ut nu så ser det lite mörkt ut med att få det att fungera som det ska, men kommer att fortsätta och hoppas att få till det. 
 Alltenativet att rita ut en UI i själva konsol applikationen, men det får vi se senare.
 
+-----------------------------------
+
+2021-04-10 21:18
+Martin Berntson
+
+Kodade i ca. en halvtimme för att försöka få till en databas för att spara och ladda.
+Spenderade sedan 90 minuter med felsökning innan jag bestämde mig för att helt enkelt ta och lösa det på ett smartare sätt (som kräver lite mer kod, men sparar mindre onödig information och som jag faktiskt vet exakt vad som sparas) imorgon. Detta ligger på en ny branch, så ni kan kolla på den om ni vill men det är inget fungerande just nu.

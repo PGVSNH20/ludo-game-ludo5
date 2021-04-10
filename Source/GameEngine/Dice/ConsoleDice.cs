@@ -1,15 +1,17 @@
 ﻿using GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GameEngine.Dice
 {
-    public class ConsoleDice : IDice
+    [NotMapped]
+    public class ConsoleDice : BaseDice
     {
-        public int Roll()
+        public override int Roll()
         {
             Console.WriteLine("Press Enter to roll the dice");
             Console.ReadLine();

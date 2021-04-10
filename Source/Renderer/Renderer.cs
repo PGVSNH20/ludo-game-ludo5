@@ -1,5 +1,5 @@
 ﻿using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using GameEngine.Dice;
 using GameEngine.Selectors;
 using System;

@@ -1,16 +1,18 @@
-﻿using GameEngine.Classes;
+﻿using GameEngine.Models;
 using GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameEngine.Selectors
 {
-    public class AISelector : ISelector
+    [NotMapped]
+    public class AISelector : BaseSelector
     {
-        public Turn Selector(Turn currentTurn, List<int> selectionList)
+        public override Turn Selector(Turn currentTurn, List<int> selectionList)
         {
             currentTurn.PieceID = selectionList[0];
             return currentTurn;

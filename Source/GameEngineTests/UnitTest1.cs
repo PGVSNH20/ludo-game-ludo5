@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using System.Collections.Generic;
 using GameEngine.Interfaces;
 using GameEngine.Selectors;

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameEngine.Classes
+namespace GameEngine.Models
 {
     /*
      * This class is used to represent a single turn (or, if multiple rolls are made in one turn, a part of a turn)
@@ -20,6 +22,9 @@ namespace GameEngine.Classes
      */
     public class Turn
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column(Order = 0)]
+        public int Id { get; set; }
         public int? PieceID { get; set; } = null;
         public int? Roll { get; set; } = null;
         public Turn()

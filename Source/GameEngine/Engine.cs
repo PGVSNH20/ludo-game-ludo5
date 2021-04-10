@@ -1,4 +1,4 @@
-﻿using GameEngine.Classes;
+﻿using GameEngine.Models;
 using GameEngine.EngineFunctionality;
 using GameEngine.Interfaces;
 using System;
@@ -35,7 +35,14 @@ namespace GameEngine
             {
 				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
 
-				Turn currentTurn = new();
+                Console.WriteLine("Would you like to save the game? (y/n)");
+                if (YesOrNoConsoleInput())
+                {
+                    DatabaseAccess.Save(State);
+                    Console.WriteLine("Would you like to exit the game?");
+                    if (YesOrNoConsoleInput()) Environment.Exit(10);
+                }
+                Turn currentTurn = new();
 				
                 currentTurn.Roll = State.Players[State.ActivePlayer].Dice.Roll();
 				Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
@@ -43,10 +50,9 @@ namespace GameEngine
                 if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
                 {
                     currentTurn = State.Players[State.ActivePlayer].Selector
-                                                                        .Selector(
-                                                                            currentTurn, Movement.ListLegalMoves(
-                                                                                (int)currentTurn.Roll, State
-                                                                                ));
+                                                                   .Selector(currentTurn, Movement.ListLegalMoves(
+                                                                                                    (int)currentTurn.Roll, State
+                                                                                                    ));
                     ExecuteTurn(currentTurn);
                     NextPlayer();
                     // gameHasNoWinner = IsTheGameFinished();
@@ -66,6 +72,23 @@ namespace GameEngine
                 }
             }
             Console.WriteLine($"Player {playerWinOrder[0].Name} won the game!\n~~Congratulations~~");
+        }
+
+        private bool YesOrNoConsoleInput()
+        {
+            return Console.ReadLine() == "y" ? true : false;
+        }
+
+        internal void RunLoadedTurns(List<Turn> executedTurns)
+        {
+            foreach (Turn t in executedTurns)
+            {
+                while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
+                ExecuteTurn(t);
+                NextPlayer();
+                State.Turnlist.Add(t);
+            }
+            GameLoop();
         }
 
         private List<Player> RemoveActivePlayerFromTheGame(List<Player> playerWinOrder)

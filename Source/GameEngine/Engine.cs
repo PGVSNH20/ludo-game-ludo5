@@ -51,12 +51,12 @@ namespace GameEngine
                                                                                                     (int)currentTurn.Roll, State
                                                                                                     ));
                     bool pushed = ExecuteTurn(currentTurn);
-                    if (!pushed) NextPlayer();
+                    if (!pushed && currentTurn.Roll != 6) NextPlayer();
                 }
                 else
                 {
                     Console.WriteLine("No legal moves found, moving to next player");
-                    NextPlayer();
+                    if (currentTurn.Roll != 6) NextPlayer();
                 }
                 State.Turnlist.Add(currentTurn);
 
@@ -96,7 +96,7 @@ namespace GameEngine
             {
                 while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
                 bool pushed = ExecuteTurn(t);
-                if (!pushed) NextPlayer();
+                if (!pushed && t.Roll != 6) NextPlayer();
                 State.Turnlist.Add(t);
             }
             GameLoop();

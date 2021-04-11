@@ -3,6 +3,7 @@ using GameEngine.Dice;
 using GameEngine.Interfaces;
 using GameEngine.Models;
 using GameEngine.Selectors;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,8 +58,10 @@ namespace GameEngine.EngineFunctionality
 			// This should not call the GameLoop untill the gamestate is fully set up - instead it should do a foreach on the turnlist and send all turns to the ExecuteTurn-method.
 			using LudoContext context = new();
 			SaveData data = context.Save
-				.Where(p => p.Id == i)
-				.FirstOrDefault();
+				.Include(p => p.ExecutedTurns)
+				.Include(p => p.Players)
+				.Where(p => p.Id == i).FirstOrDefault();
+
 			GameSettings settings = new();
 			settings.BoardSize = data.Boardsize;
 			settings.Players = ExtractPlayerlistFromLoadedData(data);
@@ -86,8 +89,8 @@ namespace GameEngine.EngineFunctionality
 		{
 			switch (i)
 			{
-				case 0: return (IDice)new AISelector();
-				case 1: return (IDice)new ConsoleSelector();
+				case 0: return new AIDice();
+				case 1: return new ConsoleDice();
 				default: throw new NotImplementedException("Player type not implemented in load function.");
 			}
 		}
@@ -96,8 +99,8 @@ namespace GameEngine.EngineFunctionality
         {
             switch (i)
             {
-				case 0: return (ISelector)new AIDice();
-				case 1: return (ISelector)new ConsoleDice();
+				case 0: return new AISelector();
+				case 1: return new ConsoleSelector();
 				default: throw new NotImplementedException("Player type not implemented in load function.");
             }
         }

@@ -50,8 +50,8 @@ namespace GameEngine
                                                                    .Selector(State,currentTurn, Movement.ListLegalMoves(
                                                                                                     (int)currentTurn.Roll, State
                                                                                                     ));
-                    ExecuteTurn(currentTurn);
-                    NextPlayer();
+                    bool pushed = ExecuteTurn(currentTurn);
+                    if (!pushed) NextPlayer();
                 }
                 else
                 {
@@ -95,8 +95,8 @@ namespace GameEngine
             foreach (Turn t in executedTurns)
             {
                 while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
-                ExecuteTurn(t);
-                NextPlayer();
+                bool pushed = ExecuteTurn(t);
+                if (!pushed) NextPlayer();
                 State.Turnlist.Add(t);
             }
             GameLoop();
@@ -134,11 +134,11 @@ namespace GameEngine
 			// It increments the ActivePlayer variable.
 			// If ActivePlayer is equal to Players.Count it means that it should roll over to zero (since Players is a list starting from 0, not one.)
         }
-		private void ExecuteTurn(Turn currentTurn)
+		private bool ExecuteTurn(Turn currentTurn)
         {
             // PieceID and Roll are set to null when the Turn-object is first created.
-            if (String.IsNullOrEmpty(Convert.ToString(currentTurn.PieceID))) return;
-            if (String.IsNullOrEmpty(Convert.ToString(currentTurn.Roll))) return;
+            if (String.IsNullOrEmpty(Convert.ToString(currentTurn.PieceID))) return false; 
+            if (String.IsNullOrEmpty(Convert.ToString(currentTurn.Roll))) return false;
             
             int roll = (int)currentTurn.Roll;
             int pieceId = (int)currentTurn.PieceID;
@@ -154,24 +154,27 @@ namespace GameEngine
                 // if (State.Players[State.ActivePlayer].Score == 4) PlayerHasFinishedGame(State.ActivePlayer);
             }
             State.Board.Pieces[pieceId].PiecePosition = piecePosition;
-            if (piecePosition >= 0 && piecePosition < boardSize) PiecePusher(piecePosition);
+            bool pushed = false;
+            if (piecePosition >= 0 && piecePosition < boardSize) pushed = PiecePusher(piecePosition);
 
             Console.WriteLine($"Piece moved to {piecePosition}");
+            return pushed;
         }
 
-        private void PiecePusher(int piecePosition)
+        private bool PiecePusher(int piecePosition)
         {
             // This should only be called if the Piece is still on the main board.
-            if (State.Board.MainBoard[piecePosition].Safe) return;                          //escape the method if the square is a safe square.
+            if (State.Board.MainBoard[piecePosition].Safe) return false;                          //escape the method if the square is a safe square.
             List<Piece> piecesOnTheSameSquare = FindPiecesOnSameSquare(piecePosition);      // Finds all pieces that are on the same square
-            piecesOnTheSameSquare = SelectActivePlayerPieces(piecesOnTheSameSquare);        // Filters out the active player's own pieces
+            piecesOnTheSameSquare = SelectInactivePlayersPieces(piecesOnTheSameSquare);        // Filters out the active player's own pieces
             foreach (Piece p in piecesOnTheSameSquare)                                      // And then moves the remainder, if any, to the nest at -1.
             {
                 p.PiecePosition = -1;
             }
+            return piecesOnTheSameSquare.Count > 0 ? true : false;
         }
 
-        private List<Piece> SelectActivePlayerPieces(List<Piece> piecesOnTheSameSquare)
+        private List<Piece> SelectInactivePlayersPieces(List<Piece> piecesOnTheSameSquare)
         {
             List<Piece> pieceList = new();
             foreach(Piece p in piecesOnTheSameSquare)

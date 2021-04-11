@@ -1,14 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using GameEngine.Dice;
 using GameEngine.Interfaces;
 
-namespace GameEngine
+namespace GameEngine.Dice
 {
     [NotMapped]
-    public class AIDice : BaseDice
+    public class AIDice : IDice
     {
-        public override int Roll()
+        public int Roll()
         {
             return new Random().Next(1, 7);
         }

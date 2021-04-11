@@ -9,6 +9,7 @@ using GameEngine.Constants;
 using GameEngine.Enumerations;
 using GameEngine.Interfaces;
 using GameEngine.Selectors;
+using GameEngine.Dice;
 
 namespace Beta
 {

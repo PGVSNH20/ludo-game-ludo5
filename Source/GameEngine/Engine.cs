@@ -14,6 +14,10 @@ namespace GameEngine
         {
 			State = new Gamestate(settings);
 		}
+        public static Engine Load(int i)
+        {
+            return DatabaseAccess.Load(i);
+        }
 
         public void StartGame()
 		{

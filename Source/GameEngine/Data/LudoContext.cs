@@ -17,14 +17,5 @@ namespace GameEngine.Data
         {
             optionBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LudoSaves;");
         }
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.Entity<AIDice>();
-            builder.Entity<ConsoleDice>();
-            builder.Entity<AISelector>();
-            builder.Entity<ConsoleSelector>();
-            base.OnModelCreating(builder);
-
-        }
     }
 }

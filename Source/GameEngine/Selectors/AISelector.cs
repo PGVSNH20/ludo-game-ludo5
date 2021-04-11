@@ -10,9 +10,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GameEngine.Selectors
 {
     [NotMapped]
-    public class AISelector : BaseSelector
+    public class AISelector : ISelector
     {
-        public override Turn Selector(Turn currentTurn, List<int> selectionList)
+        public Turn Selector(Turn currentTurn, List<int> selectionList)
         {
             currentTurn.PieceID = selectionList[0];
             return currentTurn;

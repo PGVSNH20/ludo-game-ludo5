@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using GameEngine;
+using GameEngine.Dice;
 using GameEngine.Models;
 using System.Collections.Generic;
 using GameEngine.Interfaces;

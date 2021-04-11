@@ -6,51 +6,104 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using GameEngine.EngineFunctionality;
 
 namespace GameEngine.Selectors
 {
     [NotMapped]
     public class AISelector : ISelector
     {
-
-        public Turn Selector(Gamestate state,Turn currentTurn, List<int> selectionList)
+        public Turn Selector(Gamestate state, Turn currentTurn, List<int> selectionList)
         {
-            currentTurn.PieceID = selectionList[0];
+            int roll = (int)currentTurn.Roll;
+            Board board = state.Board;
+            Random random = new();
 
-            //if currentturn.roll == 6
-            //if piece postion == -1.
+            List<int> leaveList = LeaveNest(selectionList, roll, board);
+            List<int> knockList = KnockOut(selectionList, roll, board);
+            List<int> homeList = KnockOut(selectionList, roll, board);
 
+            if (leaveList.Count > 0)
+            {
+                currentTurn.PieceID = selectionList[random.Next(0, leaveList.Count)];
+                return currentTurn;
+            }
+
+            if(knockList.Count > 0)
+            {
+                currentTurn.PieceID = selectionList[random.Next(0, knockList.Count)];
+                return currentTurn;
+            }
+
+            if (homeList.Count > 0)
+            {
+                currentTurn.PieceID = selectionList[random.Next(0, homeList.Count)];
+                return currentTurn;
+            }
+
+            currentTurn.PieceID = selectionList[random.Next(0, selectionList.Count)];
 
             return currentTurn;
+
         }
 
 
-        public bool KnockOut(int pieceId, Turn currentturn, Board board)
+        public List<int> KnockOut(List<int> selections, int roll, Board board)
         {
-            int LandingSpot = board.Pieces[pieceId].PiecePosition + (int)currentturn.Roll;
+            List<int> results = new();
 
-            if (!board.MainBoard[LandingSpot].Safe)
+            foreach (var pieceId in selections)
             {
-                foreach (Piece item in board.Pieces)
+                int LandingSpot = Movement.PiecePositionCalculator(roll, pieceId, board.Pieces[pieceId].PiecePosition, board.MainBoard.Count);
+
+                if (!board.MainBoard[LandingSpot].Safe)
                 {
-                    if (LandingSpot == item.PiecePosition && item.PlayerID != board.Pieces[pieceId].PlayerID)
+                    foreach (Piece item in board.Pieces)
                     {
-                        return true;
+                        if (LandingSpot == item.PiecePosition && item.PlayerID != board.Pieces[pieceId].PlayerID)
+                        {
+                            results.Add(pieceId);
+                        }
                     }
+                }
+
+
+
+            }
+            return results;
+
+        }
+
+        public List<int> LeaveNest(List<int> selections, int roll, Board board)
+        {
+            List<int> results = new();
+
+            foreach (var pieceId in selections)
+            {
+                if (roll == 6 && board.Pieces[pieceId].PiecePosition == -1)
+                {
+                    results.Add(pieceId);
                 }
             }
 
-
-        return false; 
-
+            return results;
         }
 
-        public bool LeaveNest(int pieceId, Turn currentturn, Board board)
+
+        public List<int> EnterHomeStrech(List<int> selections, int roll, Board board)
         {
-            
+            List<int> results = new();
+            foreach (var pieceId in selections)
+            {
+                int LandingSpot = Movement.PiecePositionCalculator(roll, pieceId, board.Pieces[pieceId].PiecePosition, board.MainBoard.Count);
 
+                if (LandingSpot > board.MainBoard.Count || LandingSpot == -2)
+                {
+                    results.Add(pieceId);
+                }
+            }
 
-            return false;
+            return results;
 
         }
 
@@ -60,7 +113,7 @@ namespace GameEngine.Selectors
 
         ///1 Move out of nest.
         ///2 Knock away oponents piece.
-        ///3 Move to Goal.
+        ///3 Move to HomeStretch /Goal
         ///4 Move random piece. 
     }
 }

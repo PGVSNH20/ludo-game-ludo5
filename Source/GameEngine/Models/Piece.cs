@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GameEngine.Classes
+namespace GameEngine.Models
 {
     public class Piece
     {
@@ -30,6 +30,7 @@ namespace GameEngine.Classes
                     pieces.Add(new Piece(k, j));
                 }
             }
+            incrementedId = 0;
             return pieces;
         }
     }

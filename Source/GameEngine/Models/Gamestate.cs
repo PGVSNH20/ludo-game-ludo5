@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameEngine.Classes
+namespace GameEngine.Models
 {
     public class Gamestate
     {
@@ -14,6 +14,7 @@ namespace GameEngine.Classes
         public List<Turn> Turnlist { get; set; }
         public int ActivePlayer { get; set; }
         public List<Player> PlayersStillPlaying { get; set; }
+        public bool GameHasNoWinner { get; set; }
 
         public Gamestate(GameSettings settings)
         {

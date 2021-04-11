@@ -1,8 +1,10 @@
 ﻿using NUnit.Framework;
 using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using GameEngine.EngineFunctionality;
 using System.Collections.Generic;
+using GameEngine.Selectors;
+using GameEngine.Dice;
 
 namespace GameEngineTests
 {
@@ -18,10 +20,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnFourObjects_WhenGivenARollOfSixAtStartOfGame()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
 
             var sut = Movement.ListLegalMoves(6, state);
@@ -32,10 +34,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfFiveWithOnePieceInPlay()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 0;
 
@@ -46,10 +48,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfOneAtStartOfGame()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
 
             var sut = Movement.ListLegalMoves(1, state);
@@ -59,10 +61,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfOneWithASinglePieceAtTheEndOfTheHomeStretch()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 44;
 
@@ -73,10 +75,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfTwoWithASinglePieceAtTheEndOfTheHomeStretch()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 44;
 
@@ -87,10 +89,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnZeroObjects_WhenGivenARollOfSixWithAllPiecesOnTheHomeStretch()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 40;
             state.Board.Pieces[1].PiecePosition = 41;
@@ -104,10 +106,10 @@ namespace GameEngineTests
         public void ListLegalMoves_ShouldReturnOneObject_WhenGivenARollOfTwoWithOnePieceRightNextToTheGoalAndAnotherFurtherBackOnTheHomeStretch()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             state.Board.Pieces[0].PiecePosition = 40;
             state.Board.Pieces[3].PiecePosition = 44;
@@ -120,10 +122,10 @@ namespace GameEngineTests
         public void CheckIfPieceCanMove_ShouldReturnTrue_GivenARollOfSixAndPieceInNest()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
             var piece = new Piece(100, 100);
             piece.PiecePosition = -1;
@@ -135,10 +137,10 @@ namespace GameEngineTests
         public void CheckIfPieceCanMove_ShouldReturnFalse_GivenARollOfFiveAndPieceInNest()
         {
             var playerNames = new List<PlayerSetting>();
-            playerNames.Add(new("M", new AIDice()));
-            playerNames.Add(new("R", new AIDice()));
-            playerNames.Add(new("S", new AIDice()));
-            playerNames.Add(new("Y", new AIDice()));
+            playerNames.Add(new("M", new AIDice(), new AISelector()));
+            playerNames.Add(new("R", new AIDice(), new AISelector()));
+            playerNames.Add(new("S", new AIDice(), new AISelector()));
+            playerNames.Add(new("Y", new AIDice(), new AISelector()));
             var state = new Gamestate(new GameSettings(playerNames, 40));
 
             var piece = new Piece(100, 100);

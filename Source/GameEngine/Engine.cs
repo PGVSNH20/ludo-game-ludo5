@@ -1,8 +1,8 @@
 ﻿using GameEngine.Models;
 using GameEngine.EngineFunctionality;
-using GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
+using GameEngine.Dice;
 
 namespace GameEngine
 {
@@ -37,20 +37,13 @@ namespace GameEngine
             
             while (State.GameHasNoWinner)
             {
-				while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
-
-                Console.WriteLine("Would you like to save the game? (y/n)");
-                if (YesOrNoConsoleInput())
-                {
-                    DatabaseAccess.Save(State);
-                    Console.WriteLine("Would you like to exit the game?");
-                    if (YesOrNoConsoleInput()) Environment.Exit(10);
-                }
+                while (!PlayerFunctions.CheckIfActivePlayerIsInTheGame(State)) { NextPlayer(); }
+                ShouldTheEngineAskThePlayerIfTheyWantToSave();
                 Turn currentTurn = new();
-				
+
                 currentTurn.Roll = State.Players[State.ActivePlayer].Dice.Roll();
-				Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
-				
+                Console.WriteLine($"{State.Players[State.ActivePlayer].Name} rolled a {currentTurn.Roll}");
+
                 if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
                 {
                     currentTurn = State.Players[State.ActivePlayer].Selector
@@ -59,23 +52,37 @@ namespace GameEngine
                                                                                                     ));
                     ExecuteTurn(currentTurn);
                     NextPlayer();
-                    // gameHasNoWinner = IsTheGameFinished();
                 }
                 else
                 {
-					Console.WriteLine("No legal moves found, moving to next player");
-					NextPlayer();
+                    Console.WriteLine("No legal moves found, moving to next player");
+                    NextPlayer();
                 }
-				State.Turnlist.Add(currentTurn);
-                
+                State.Turnlist.Add(currentTurn);
+
                 if (State.Players[State.ActivePlayer].Score == 4)
                 {
                     playerWinOrder = RemoveActivePlayerFromTheGame(playerWinOrder);
-					
+
                     State.GameHasNoWinner = false;
                 }
             }
             Console.WriteLine($"Player {playerWinOrder[0].Name} won the game!\n~~Congratulations~~");
+        }
+
+        private void ShouldTheEngineAskThePlayerIfTheyWantToSave()
+        {
+            ConsoleDice dice = new();
+            if (State.Players[State.ActivePlayer].Dice.GetType().ToString() == dice.GetType().ToString())
+            {
+                Console.WriteLine("Would you like to save the game? (y/n)");
+                if (YesOrNoConsoleInput())
+                {
+                    DatabaseAccess.Save(State);
+                    Console.WriteLine("Would you like to exit the game?");
+                    if (YesOrNoConsoleInput()) Environment.Exit(10);
+                }
+            }
         }
 
         private bool YesOrNoConsoleInput()

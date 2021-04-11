@@ -1,4 +1,4 @@
-﻿using GameEngine.Classes;
+﻿using GameEngine.Models;
 using GameEngine.EngineFunctionality;
 using GameEngine.Interfaces;
 using System;
@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameEngine.Selectors
 {
+    [NotMapped]
     public class ConsoleSelector : ISelector
     {
 

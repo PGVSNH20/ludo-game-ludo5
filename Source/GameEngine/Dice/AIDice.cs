@@ -1,8 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using GameEngine.Interfaces;
 
-namespace GameEngine
+namespace GameEngine.Dice
 {
+    [NotMapped]
     public class AIDice : IDice
     {
         public int Roll()

@@ -4,11 +4,12 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using GameEngine.Constants;
 using GameEngine.Enumerations;
 using GameEngine.Interfaces;
 using GameEngine.Selectors;
+using GameEngine.Dice;
 
 namespace Beta
 {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameEngine.Classes
+namespace GameEngine.Models
 {
     public class Player
     {

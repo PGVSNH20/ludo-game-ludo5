@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using GameEngine.EngineFunctionality;
 using System.Collections.Generic;
 using GameEngine.Selectors;
+using GameEngine.Dice;
 
 namespace GameEngineTests
 {

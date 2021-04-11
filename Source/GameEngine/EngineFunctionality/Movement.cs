@@ -1,4 +1,4 @@
-﻿using GameEngine.Classes;
+﻿using GameEngine.Models;
 using System;
 using System.Collections.Generic;
 

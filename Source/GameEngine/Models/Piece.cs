@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GameEngine.Classes
+namespace GameEngine.Models
 {
     public class Piece
     {

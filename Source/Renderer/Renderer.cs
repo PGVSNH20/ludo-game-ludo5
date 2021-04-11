@@ -1,5 +1,5 @@
 ﻿using GameEngine;
-using GameEngine.Classes;
+using GameEngine.Models;
 using GameEngine.Dice;
 using GameEngine.Selectors;
 using System;
@@ -16,6 +16,12 @@ namespace Renderer
         public Engine Engine { get; set; }
         public ConsoleRenderer Setup()
         {
+            if (LoadGameOrJustSetUpANewOne())
+            {
+                Console.WriteLine("Enter the id-number of the save file");
+                this.Engine = GameEngine.Engine.Load(Convert.ToInt32(Console.ReadLine()));
+                return this;
+            }
             Console.WriteLine("Please enter how many players would like to play.");
             //var roll = new Random();
             int players = Convert.ToInt32(Console.ReadLine());
@@ -38,6 +44,18 @@ namespace Renderer
             }
             throw new Exception("Invalid number of AI players");
         }
+
+        private bool LoadGameOrJustSetUpANewOne()
+        {
+            Console.WriteLine("Would you like to load a saved game?");
+            return YesOrNoConsoleInput();
+
+        }
+        private bool YesOrNoConsoleInput()
+        {
+            return Console.ReadLine() == "y" ? true : false;
+        }
+
         public ConsoleRenderer Start()
         {
             var t = new Thread(() => Engine.StartGame());

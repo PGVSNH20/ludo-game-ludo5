@@ -65,5 +65,43 @@ namespace GameEngine.EngineFunctionality
 			}
 		}
 
+		//public Kopia av Engine.
+		public static int PiecePositionCalculator(int roll, int piecePosition, int startPosition, int boardSize)
+		{
+			switch (piecePosition) // This switch decides how to move the piece forward.
+			{
+				case -1:
+					piecePosition = startPosition;
+					break;
+				default:
+					if (piecePosition > boardSize) // Is on HomeStretch. Has already checked that it can move.
+					{
+						piecePosition += roll;
+						break;
+					}
+					if (piecePosition + roll >= boardSize) // checks if it should roll over or go to player 1's home stretch
+					{
+						if (startPosition != 0) // If not player one, loop around
+						{
+							piecePosition = piecePosition + roll - boardSize;
+							break;
+						}
+						piecePosition += roll; // If player one, enter home stretch or goal
+						break;
+					}
+					if (piecePosition < startPosition && piecePosition + roll >= startPosition)
+					{
+						piecePosition = boardSize + piecePosition + roll - startPosition;
+						break; // Basically, piecePosition + roll - startPosition is the amount of overflow when you reach the end of your track... And boardSize is, well, end of the board.
+					}
+					piecePosition += roll;
+					break;
+			}
+
+			return piecePosition;
+		}
 	}
+
+
 }
+

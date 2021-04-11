@@ -54,7 +54,7 @@ namespace GameEngine
                 if (Movement.AreThereLegalMoves((int)currentTurn.Roll, State))
                 {
                     currentTurn = State.Players[State.ActivePlayer].Selector
-                                                                   .Selector(currentTurn, Movement.ListLegalMoves(
+                                                                   .Selector(State,currentTurn, Movement.ListLegalMoves(
                                                                                                     (int)currentTurn.Roll, State
                                                                                                     ));
                     ExecuteTurn(currentTurn);

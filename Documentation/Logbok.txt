@@ -129,3 +129,7 @@ Det funkade bra för att spara, men när jag laddade blev det några småproblem
 Med hjälp från Stephan så hittade jag till slut lösningen, jag glömde att koppla tabellerna med Include()-anrop före min Where().
 Med det fixat så tror jag att spelet nu kan både spara och ladda.
 Har inte implementerat en replay-funktion...Men det vore i princip samma sak som att spara efter att spelet är slut, så tekniskt sett skulle det bara ta två eller tre rader kod att implementera sparning, och samma för laddning, men våran UI är inte så bra så jag skulle helst skippa det för tillfället.
+
+2021-04-11 19:12
+
+La till regler för extra turer ifall man knuffar och/eller rullar en sexa.

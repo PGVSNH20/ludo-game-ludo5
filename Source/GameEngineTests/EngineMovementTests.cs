@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using GameEngine;
 using GameEngine.Models;
 using GameEngine.EngineFunctionality;
 using System.Collections.Generic;

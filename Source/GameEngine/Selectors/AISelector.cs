@@ -2,9 +2,6 @@
 using GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using GameEngine.EngineFunctionality;
 
@@ -20,21 +17,20 @@ namespace GameEngine.Selectors
             Random random = new();
 
             List<int> leaveList = LeaveNest(selectionList, roll, board);
-            List<int> knockList = KnockOut(selectionList, roll, board);
-            List<int> homeList = KnockOut(selectionList, roll, board);
-
             if (leaveList.Count > 0)
             {
                 currentTurn.PieceID = selectionList[random.Next(0, leaveList.Count)];
                 return currentTurn;
             }
 
-            if(knockList.Count > 0)
+            List<int> knockList = KnockOut(selectionList, roll, board);
+            if (knockList.Count > 0)
             {
                 currentTurn.PieceID = selectionList[random.Next(0, knockList.Count)];
                 return currentTurn;
             }
 
+            List<int> homeList = EnterHomeStrech(selectionList, roll, board);
             if (homeList.Count > 0)
             {
                 currentTurn.PieceID = selectionList[random.Next(0, homeList.Count)];
@@ -108,7 +104,6 @@ namespace GameEngine.Selectors
             }
 
             return results;
-
         }
 
 

@@ -147,14 +147,15 @@ namespace GameEngine
             int boardSize = State.Board.MainBoard.Count; // If the board has 40 squares, then ID 40 is the first square of the home stretch...
 
             piecePosition = PiecePositionCalculator(roll, piecePosition, startPosition, boardSize);
+            bool pushed = false;
             if (piecePosition == State.Board.MainBoard.Count + 5) // Checks if the piece is "in the goal", if it is it's set to the true goal value, player gets a point, and checks if player has finished the game.
             {
                 piecePosition = -2;
                 State.Players[State.ActivePlayer].Score++;
+                pushed = true;
                 // if (State.Players[State.ActivePlayer].Score == 4) PlayerHasFinishedGame(State.ActivePlayer);
             }
             State.Board.Pieces[pieceId].PiecePosition = piecePosition;
-            bool pushed = false;
             if (piecePosition >= 0 && piecePosition < boardSize) pushed = PiecePusher(piecePosition);
 
             Console.WriteLine($"Piece moved to {piecePosition}");

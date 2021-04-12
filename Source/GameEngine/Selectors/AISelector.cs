@@ -55,17 +55,21 @@ namespace GameEngine.Selectors
             foreach (var pieceId in selections)
             {
                 int LandingSpot = Movement.PiecePositionCalculator(roll, pieceId, board.Pieces[pieceId].PiecePosition, board.MainBoard.Count);
-
-                if (!board.MainBoard[LandingSpot].Safe)
-                {
-                    foreach (Piece item in board.Pieces)
+                if(LandingSpot < board.MainBoard.Count){
+                    if (!board.MainBoard[LandingSpot].Safe)
                     {
-                        if (LandingSpot == item.PiecePosition && item.PlayerID != board.Pieces[pieceId].PlayerID)
+                        foreach (Piece item in board.Pieces)
                         {
-                            results.Add(pieceId);
+                            if (LandingSpot == item.PiecePosition && item.PlayerID != board.Pieces[pieceId].PlayerID)
+                            {
+                                
+                                if(!results.Contains(pieceId))
+                                    results.Add(pieceId);
+                            }
                         }
                     }
                 }
+                
 
 
 

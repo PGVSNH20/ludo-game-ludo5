@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using GameEngine;
 using GameEngine.Models;
-using GameEngine.EngineFunctionality;
-using System.Collections.Generic;
 using GameEngine.Selectors;
 using GameEngine.Dice;
 

@@ -127,10 +127,9 @@ namespace Beta
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(726, 617);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(635, 463);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 36);
+            this.button1.Size = new System.Drawing.Size(145, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "Kasta tärningen";
             this.button1.UseVisualStyleBackColor = true;
@@ -140,10 +139,9 @@ namespace Beta
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gold;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 144);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 108);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(78, 82);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -151,10 +149,9 @@ namespace Beta
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(466, 41);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(408, 31);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 93);
+            this.pictureBox2.Size = new System.Drawing.Size(82, 71);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -162,10 +159,9 @@ namespace Beta
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(567, 588);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(496, 441);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(94, 108);
+            this.pictureBox3.Size = new System.Drawing.Size(83, 82);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -174,29 +170,26 @@ namespace Beta
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.RoyalBlue;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Location = new System.Drawing.Point(114, 684);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(100, 513);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(93, 107);
+            this.pictureBox4.Size = new System.Drawing.Size(82, 81);
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // textInput
             // 
-            this.textInput.Location = new System.Drawing.Point(726, 121);
-            this.textInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textInput.Location = new System.Drawing.Point(635, 91);
             this.textInput.Name = "textInput";
-            this.textInput.Size = new System.Drawing.Size(165, 27);
+            this.textInput.Size = new System.Drawing.Size(145, 23);
             this.textInput.TabIndex = 6;
             this.textInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(726, 165);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(635, 124);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 31);
+            this.button2.Size = new System.Drawing.Size(145, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Registera";
             this.button2.UseVisualStyleBackColor = true;
@@ -206,10 +199,9 @@ namespace Beta
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(165, 144);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(144, 108);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox5.Size = new System.Drawing.Size(38, 38);
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
@@ -217,10 +209,9 @@ namespace Beta
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(315, 144);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(276, 108);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox8.Size = new System.Drawing.Size(38, 38);
             this.pictureBox8.TabIndex = 11;
             this.pictureBox8.TabStop = false;
             // 
@@ -228,10 +219,9 @@ namespace Beta
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(466, 144);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(408, 108);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox10.Size = new System.Drawing.Size(38, 38);
             this.pictureBox10.TabIndex = 14;
             this.pictureBox10.TabStop = false;
             // 
@@ -239,10 +229,9 @@ namespace Beta
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Location = new System.Drawing.Point(416, 144);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox11.Location = new System.Drawing.Point(364, 108);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox11.Size = new System.Drawing.Size(38, 38);
             this.pictureBox11.TabIndex = 13;
             this.pictureBox11.TabStop = false;
             // 
@@ -250,10 +239,9 @@ namespace Beta
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Location = new System.Drawing.Point(366, 144);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox12.Location = new System.Drawing.Point(320, 108);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox12.Size = new System.Drawing.Size(38, 38);
             this.pictureBox12.TabIndex = 12;
             this.pictureBox12.TabStop = false;
             // 
@@ -261,10 +249,9 @@ namespace Beta
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox13.Location = new System.Drawing.Point(517, 615);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox13.Location = new System.Drawing.Point(452, 461);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox13.Size = new System.Drawing.Size(38, 38);
             this.pictureBox13.TabIndex = 23;
             this.pictureBox13.TabStop = false;
             // 
@@ -272,10 +259,9 @@ namespace Beta
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox14.Location = new System.Drawing.Point(466, 615);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox14.Location = new System.Drawing.Point(408, 461);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox14.Size = new System.Drawing.Size(38, 38);
             this.pictureBox14.TabIndex = 22;
             this.pictureBox14.TabStop = false;
             // 
@@ -283,10 +269,9 @@ namespace Beta
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox15.Location = new System.Drawing.Point(416, 615);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox15.Location = new System.Drawing.Point(364, 461);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox15.Size = new System.Drawing.Size(38, 38);
             this.pictureBox15.TabIndex = 21;
             this.pictureBox15.TabStop = false;
             // 
@@ -294,10 +279,9 @@ namespace Beta
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox16.Location = new System.Drawing.Point(366, 615);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox16.Location = new System.Drawing.Point(320, 461);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox16.Size = new System.Drawing.Size(38, 38);
             this.pictureBox16.TabIndex = 20;
             this.pictureBox16.TabStop = false;
             // 
@@ -305,10 +289,9 @@ namespace Beta
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox17.Location = new System.Drawing.Point(315, 615);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox17.Location = new System.Drawing.Point(276, 461);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox17.Size = new System.Drawing.Size(38, 38);
             this.pictureBox17.TabIndex = 19;
             this.pictureBox17.TabStop = false;
             // 
@@ -316,10 +299,9 @@ namespace Beta
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox18.Location = new System.Drawing.Point(265, 615);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox18.Location = new System.Drawing.Point(232, 461);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox18.Size = new System.Drawing.Size(38, 38);
             this.pictureBox18.TabIndex = 18;
             this.pictureBox18.TabStop = false;
             // 
@@ -327,10 +309,9 @@ namespace Beta
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox19.Location = new System.Drawing.Point(215, 615);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox19.Location = new System.Drawing.Point(188, 461);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox19.Size = new System.Drawing.Size(38, 38);
             this.pictureBox19.TabIndex = 17;
             this.pictureBox19.TabStop = false;
             // 
@@ -338,10 +319,9 @@ namespace Beta
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.RoyalBlue;
             this.pictureBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox20.Location = new System.Drawing.Point(165, 615);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox20.Location = new System.Drawing.Point(144, 461);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox20.Size = new System.Drawing.Size(38, 38);
             this.pictureBox20.TabIndex = 16;
             this.pictureBox20.TabStop = false;
             // 
@@ -349,10 +329,9 @@ namespace Beta
             // 
             this.pictureBox21.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox21.Location = new System.Drawing.Point(114, 144);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox21.Location = new System.Drawing.Point(100, 108);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox21.Size = new System.Drawing.Size(38, 38);
             this.pictureBox21.TabIndex = 24;
             this.pictureBox21.TabStop = false;
             // 
@@ -360,10 +339,9 @@ namespace Beta
             // 
             this.pictureBox22.BackColor = System.Drawing.Color.Gold;
             this.pictureBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox22.Location = new System.Drawing.Point(114, 203);
-            this.pictureBox22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox22.Location = new System.Drawing.Point(100, 152);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox22.Size = new System.Drawing.Size(38, 38);
             this.pictureBox22.TabIndex = 25;
             this.pictureBox22.TabStop = false;
             // 
@@ -371,10 +349,9 @@ namespace Beta
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox23.Location = new System.Drawing.Point(114, 263);
-            this.pictureBox23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox23.Location = new System.Drawing.Point(100, 197);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox23.Size = new System.Drawing.Size(38, 38);
             this.pictureBox23.TabIndex = 26;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
@@ -383,10 +360,9 @@ namespace Beta
             // 
             this.pictureBox24.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox24.Location = new System.Drawing.Point(114, 321);
-            this.pictureBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox24.Location = new System.Drawing.Point(100, 241);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox24.Size = new System.Drawing.Size(38, 38);
             this.pictureBox24.TabIndex = 27;
             this.pictureBox24.TabStop = false;
             // 
@@ -394,10 +370,9 @@ namespace Beta
             // 
             this.pictureBox25.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox25.Location = new System.Drawing.Point(114, 380);
-            this.pictureBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox25.Location = new System.Drawing.Point(100, 285);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox25.Size = new System.Drawing.Size(38, 38);
             this.pictureBox25.TabIndex = 28;
             this.pictureBox25.TabStop = false;
             // 
@@ -405,10 +380,9 @@ namespace Beta
             // 
             this.pictureBox26.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox26.Location = new System.Drawing.Point(517, 144);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox26.Location = new System.Drawing.Point(452, 108);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox26.Size = new System.Drawing.Size(38, 38);
             this.pictureBox26.TabIndex = 29;
             this.pictureBox26.TabStop = false;
             // 
@@ -416,10 +390,9 @@ namespace Beta
             // 
             this.pictureBox27.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox27.Location = new System.Drawing.Point(517, 204);
-            this.pictureBox27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox27.Location = new System.Drawing.Point(452, 153);
             this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox27.Size = new System.Drawing.Size(38, 38);
             this.pictureBox27.TabIndex = 30;
             this.pictureBox27.TabStop = false;
             // 
@@ -427,10 +400,9 @@ namespace Beta
             // 
             this.pictureBox28.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox28.Location = new System.Drawing.Point(517, 263);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox28.Location = new System.Drawing.Point(452, 197);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox28.Size = new System.Drawing.Size(38, 38);
             this.pictureBox28.TabIndex = 31;
             this.pictureBox28.TabStop = false;
             // 
@@ -438,10 +410,9 @@ namespace Beta
             // 
             this.pictureBox30.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox30.Location = new System.Drawing.Point(517, 321);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox30.Location = new System.Drawing.Point(452, 241);
             this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox30.Size = new System.Drawing.Size(38, 38);
             this.pictureBox30.TabIndex = 32;
             this.pictureBox30.TabStop = false;
             // 
@@ -449,10 +420,9 @@ namespace Beta
             // 
             this.pictureBox31.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox31.Location = new System.Drawing.Point(517, 380);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox31.Location = new System.Drawing.Point(452, 285);
             this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox31.Size = new System.Drawing.Size(38, 38);
             this.pictureBox31.TabIndex = 33;
             this.pictureBox31.TabStop = false;
             this.pictureBox31.Click += new System.EventHandler(this.pictureBox31_Click);
@@ -461,10 +431,9 @@ namespace Beta
             // 
             this.pictureBox29.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox29.Location = new System.Drawing.Point(114, 439);
-            this.pictureBox29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox29.Location = new System.Drawing.Point(100, 329);
             this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox29.Size = new System.Drawing.Size(38, 38);
             this.pictureBox29.TabIndex = 34;
             this.pictureBox29.TabStop = false;
             // 
@@ -472,10 +441,9 @@ namespace Beta
             // 
             this.pictureBox32.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox32.Location = new System.Drawing.Point(114, 497);
-            this.pictureBox32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox32.Location = new System.Drawing.Point(100, 373);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox32.Size = new System.Drawing.Size(38, 38);
             this.pictureBox32.TabIndex = 35;
             this.pictureBox32.TabStop = false;
             // 
@@ -483,10 +451,9 @@ namespace Beta
             // 
             this.pictureBox34.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox34.Location = new System.Drawing.Point(517, 556);
-            this.pictureBox34.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox34.Location = new System.Drawing.Point(452, 417);
             this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox34.Size = new System.Drawing.Size(38, 38);
             this.pictureBox34.TabIndex = 37;
             this.pictureBox34.TabStop = false;
             // 
@@ -494,10 +461,9 @@ namespace Beta
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(215, 144);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(188, 108);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox6.Size = new System.Drawing.Size(38, 38);
             this.pictureBox6.TabIndex = 38;
             this.pictureBox6.TabStop = false;
             // 
@@ -505,10 +471,9 @@ namespace Beta
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.SeaShell;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(265, 144);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(232, 108);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
             this.pictureBox7.TabIndex = 39;
             this.pictureBox7.TabStop = false;
             // 
@@ -516,10 +481,9 @@ namespace Beta
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(517, 439);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(452, 329);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox9.Size = new System.Drawing.Size(38, 38);
             this.pictureBox9.TabIndex = 40;
             this.pictureBox9.TabStop = false;
             // 
@@ -527,10 +491,9 @@ namespace Beta
             // 
             this.pictureBox33.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox33.Location = new System.Drawing.Point(114, 556);
-            this.pictureBox33.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox33.Location = new System.Drawing.Point(100, 417);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox33.Size = new System.Drawing.Size(38, 38);
             this.pictureBox33.TabIndex = 41;
             this.pictureBox33.TabStop = false;
             // 
@@ -538,10 +501,9 @@ namespace Beta
             // 
             this.pictureBox35.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox35.Location = new System.Drawing.Point(114, 615);
-            this.pictureBox35.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox35.Location = new System.Drawing.Point(100, 461);
             this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox35.Size = new System.Drawing.Size(38, 38);
             this.pictureBox35.TabIndex = 42;
             this.pictureBox35.TabStop = false;
             // 
@@ -549,19 +511,18 @@ namespace Beta
             // 
             this.pictureBox36.BackColor = System.Drawing.Color.FloralWhite;
             this.pictureBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox36.Location = new System.Drawing.Point(517, 497);
-            this.pictureBox36.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox36.Location = new System.Drawing.Point(452, 373);
             this.pictureBox36.Name = "pictureBox36";
-            this.pictureBox36.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox36.Size = new System.Drawing.Size(38, 38);
             this.pictureBox36.TabIndex = 43;
             this.pictureBox36.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(726, 97);
+            this.label1.Location = new System.Drawing.Point(635, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 20);
+            this.label1.Size = new System.Drawing.Size(112, 15);
             this.label1.TabIndex = 44;
             this.label1.Text = "ENTER YOUR NAME";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -569,10 +530,9 @@ namespace Beta
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(475, 52);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(416, 39);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 25);
+            this.button3.Size = new System.Drawing.Size(19, 19);
             this.button3.TabIndex = 45;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -580,10 +540,9 @@ namespace Beta
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(517, 52);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Location = new System.Drawing.Point(452, 39);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 25);
+            this.button4.Size = new System.Drawing.Size(19, 19);
             this.button4.TabIndex = 46;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -591,10 +550,9 @@ namespace Beta
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Crimson;
-            this.button5.Location = new System.Drawing.Point(475, 95);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Location = new System.Drawing.Point(416, 71);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(22, 25);
+            this.button5.Size = new System.Drawing.Size(19, 19);
             this.button5.TabIndex = 47;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -602,110 +560,99 @@ namespace Beta
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.SpringGreen;
-            this.button7.Location = new System.Drawing.Point(581, 615);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button7.Location = new System.Drawing.Point(508, 461);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(22, 25);
+            this.button7.Size = new System.Drawing.Size(19, 19);
             this.button7.TabIndex = 49;
             this.button7.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.SpringGreen;
-            this.button8.Location = new System.Drawing.Point(621, 615);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button8.Location = new System.Drawing.Point(543, 461);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(22, 25);
+            this.button8.Size = new System.Drawing.Size(19, 19);
             this.button8.TabIndex = 50;
             this.button8.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.SpringGreen;
-            this.button9.Location = new System.Drawing.Point(581, 648);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button9.Location = new System.Drawing.Point(508, 486);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(22, 25);
+            this.button9.Size = new System.Drawing.Size(19, 19);
             this.button9.TabIndex = 51;
             this.button9.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.SpringGreen;
-            this.button10.Location = new System.Drawing.Point(621, 648);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button10.Location = new System.Drawing.Point(543, 486);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(22, 25);
+            this.button10.Size = new System.Drawing.Size(19, 19);
             this.button10.TabIndex = 52;
             this.button10.UseVisualStyleBackColor = false;
             // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button11.Location = new System.Drawing.Point(125, 703);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button11.Location = new System.Drawing.Point(109, 527);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(22, 25);
+            this.button11.Size = new System.Drawing.Size(19, 19);
             this.button11.TabIndex = 53;
             this.button11.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button12.Location = new System.Drawing.Point(165, 703);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button12.Location = new System.Drawing.Point(144, 527);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(22, 25);
+            this.button12.Size = new System.Drawing.Size(19, 19);
             this.button12.TabIndex = 54;
             this.button12.UseVisualStyleBackColor = false;
             // 
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button13.Location = new System.Drawing.Point(125, 749);
-            this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button13.Location = new System.Drawing.Point(109, 562);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(22, 25);
+            this.button13.Size = new System.Drawing.Size(19, 19);
             this.button13.TabIndex = 55;
             this.button13.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button14.Location = new System.Drawing.Point(165, 749);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button14.Location = new System.Drawing.Point(144, 562);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(22, 25);
+            this.button14.Size = new System.Drawing.Size(19, 19);
             this.button14.TabIndex = 56;
             this.button14.UseVisualStyleBackColor = false;
             // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.Khaki;
-            this.button15.Location = new System.Drawing.Point(34, 165);
-            this.button15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button15.Location = new System.Drawing.Point(30, 124);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(22, 25);
+            this.button15.Size = new System.Drawing.Size(19, 19);
             this.button15.TabIndex = 57;
             this.button15.UseVisualStyleBackColor = false;
             // 
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.Khaki;
-            this.button16.Location = new System.Drawing.Point(74, 165);
-            this.button16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button16.Location = new System.Drawing.Point(65, 124);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(22, 25);
+            this.button16.Size = new System.Drawing.Size(19, 19);
             this.button16.TabIndex = 58;
             this.button16.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Crimson;
-            this.button6.Location = new System.Drawing.Point(517, 95);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button6.Location = new System.Drawing.Point(452, 71);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(22, 25);
+            this.button6.Size = new System.Drawing.Size(19, 19);
             this.button6.TabIndex = 48;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -713,40 +660,36 @@ namespace Beta
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.Khaki;
-            this.button17.Location = new System.Drawing.Point(34, 204);
-            this.button17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button17.Location = new System.Drawing.Point(30, 153);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(22, 25);
+            this.button17.Size = new System.Drawing.Size(19, 19);
             this.button17.TabIndex = 59;
             this.button17.UseVisualStyleBackColor = false;
             // 
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.Khaki;
-            this.button18.Location = new System.Drawing.Point(74, 204);
-            this.button18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button18.Location = new System.Drawing.Point(65, 153);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(22, 25);
+            this.button18.Size = new System.Drawing.Size(19, 19);
             this.button18.TabIndex = 60;
             this.button18.UseVisualStyleBackColor = false;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(726, 244);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(635, 183);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(165, 364);
+            this.listBox1.Size = new System.Drawing.Size(145, 274);
             this.listBox1.TabIndex = 61;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(726, 204);
-            this.button19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button19.Location = new System.Drawing.Point(635, 153);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(166, 36);
+            this.button19.Size = new System.Drawing.Size(145, 27);
             this.button19.TabIndex = 62;
             this.button19.Text = "Starta Spel";
             this.button19.UseVisualStyleBackColor = true;
@@ -754,10 +697,10 @@ namespace Beta
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(925, 964);
+            this.ClientSize = new System.Drawing.Size(809, 723);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button18);
@@ -816,7 +759,6 @@ namespace Beta
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "b";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

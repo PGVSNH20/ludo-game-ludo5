@@ -171,6 +171,7 @@ namespace GameEngine
             foreach (Piece p in piecesOnTheSameSquare)                                      // And then moves the remainder, if any, to the nest at -1.
             {
                 p.PiecePosition = -1;
+                Console.WriteLine($"Piece {p.HiddenID} was pushed back into the nest.");
             }
             return piecesOnTheSameSquare.Count > 0 ? true : false;
         }

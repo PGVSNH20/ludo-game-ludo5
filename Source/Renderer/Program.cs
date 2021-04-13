@@ -11,7 +11,7 @@ namespace Renderer
             Thread.Sleep(100);
             var renderer2 = new ConsoleRenderer();
             renderer2.Setup().Start();
-            OneHundred.CountThis();
+            //OneHundred.CountThis();
         }
     }
 }

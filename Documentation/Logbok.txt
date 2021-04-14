@@ -133,3 +133,18 @@ Har inte implementerat en replay-funktion...Men det vore i princip samma sak som
 2021-04-11 19:12
 
 La till regler för extra turer ifall man knuffar och/eller rullar en sexa.
+
+2021-04-14
+
+Troligtvis mitt sista inlägg i denna logbok.
+I måndags spelade vi in videopresentationsklipp, som Sanna satte ihop till vår presentation över tisdagen (igår).
+Igår, tisdag, testade jag spelet i två-spelars läge för att se att allt fungerade som jag förväntade mig, då mycket testning gjorts med AI som tar hundratals turer per sekund vilket kan vara lite svårt att följa.
+Jag insåg ganska snabbt att vår UI inte är den bästa för brädspel även om den funkar tillräckligt bra för mig som kan reglerna utantill. Dock saknade jag feedback för ifall jag knuffade tillbaka en annan spelares pjäs till deras bo, så jag la till en rad kod i rätt metod och plötsligt funkade det som jag hoppades.
+Kort beskrivning av hur vårat spel ska fungera:
+Vid setup frågar den först om man vill ladda en sparning eller starta nytt spel.
+Sen väljer man antalet totala spelare, antalet AI-spelare, och om antalet AI spelare är över antalet totala spelare så får spelet nervöst sammanbrott och rapporterar dig till Windows-polisen.
+Efter det får alla männskliga spelare skriva in sina namn medan AI får siffror som namn.
+I spelloopen är det ganska simpelt: Om människa, fråga om spara. Sen rulla tärning, se om någon pjäs kan röra sig, ifall ja låt spelaren välja vilken från en lista av alla möjliga val.
+Efter det så kollar den om du vunnit, rullat en sexa eller knuffat en motståndare tillbaka till deras bo, om ja så får du en till tur, annars sätts nästa spelare som aktiv, turen sparas i en lista och om ingen spelare har vunnit så går loopen tillbaka till början.
+När någon vunnit så skrivs deras namn ut med ett kort gratulations-meddelande och programmet är slut.
+Tekniskt sett så kan flera omgångar köras samtidigt, men p.g.a. att de körs i samma kommandotolk så blir det en del problem med att invänta input som gör att det blir konflikter - men spelens state är i alla fall isolerade från varandra!
